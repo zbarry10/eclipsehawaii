@@ -61,8 +61,7 @@ ul { list-style: none; }
  .navbar__logo img {
   height: 40px;
   width: auto;
-  filter: brightness(0) invert(1);
-  mix-blend-mode: screen;
+  display: block;
 }
 .navbar__links {
   display: flex;
@@ -149,9 +148,11 @@ ul { list-style: none; }
 .hero-reveal.delay-3 { animation-delay: 0.6s; }
 
 .hero {
-  background: linear-gradient(-45deg, #1c75bc, #2388d4, #0f4d80, #1c75bc);
-  background-size: 400% 400%;
-  animation: heroGradient 15s ease infinite;
+  background:
+    linear-gradient(135deg, rgba(15,77,128,0.88) 0%, rgba(28,117,188,0.82) 50%, rgba(35,136,212,0.78) 100%),
+    url('https://images.unsplash.com/photo-1590128918419-567be937a591?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+  background-size: cover, cover;
+  background-position: center, center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -162,12 +163,21 @@ ul { list-style: none; }
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, rgba(28,117,188,0.25), rgba(35,136,212,0.2), rgba(15,77,128,0.3), rgba(28,117,188,0.25));
+  background-size: 400% 400%;
+  animation: heroGradient 15s ease infinite;
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; }
  .hero__logo {
   max-width: 400px;
   width: 70%;
   margin-bottom: 40px;
-  filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(0,0,0,0.3));
-  mix-blend-mode: screen;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
 }
 .hero__headline {
   color: #FFFFFF;
@@ -359,41 +369,41 @@ ul { list-style: none; }
 }
 .service-block__photo {
   width: 100%;
-  height: 280px;
-  background: linear-gradient(135deg, rgba(28,117,188,0.05) 0%, rgba(35,136,212,0.1) 100%);
+  height: 320px;
+  background-color: #eef4fa;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 .service-block:hover .service-block__photo {
   transform: scale(1.02);
-  box-shadow: 0 12px 32px rgba(28,117,188,0.15);
+  box-shadow: 0 16px 40px rgba(28,117,188,0.22);
 }
 .service-block__photo::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 2px 2px, rgba(28,117,188,0.15) 1px, transparent 0);
-  background-size: 24px 24px;
-  opacity: 0.5;
+  background: linear-gradient(180deg, rgba(28,117,188,0) 55%, rgba(15,77,128,0.55) 100%);
   transition: opacity 0.4s ease;
-}
-.service-block:hover .service-block__photo::after {
-  opacity: 0.8;
+  pointer-events: none;
 }
 .service-block__photo::before {
   content: '';
   position: absolute;
   inset: 0;
-  border: 2px solid rgba(28,117,188,0.1);
+  border: 1px solid rgba(28,117,188,0.15);
   border-radius: 8px;
   z-index: 2;
   transition: border-color 0.4s;
+  pointer-events: none;
 }
 .service-block:hover .service-block__photo::before {
-  border-color: rgba(28,117,188,0.3);
+  border-color: rgba(28,117,188,0.45);
 }
 
 /* ===== INDUSTRIES ===== */
@@ -699,7 +709,7 @@ ul { list-style: none; }
 .footer__logo {
   height: 36px;
   margin: 0 auto 20px;
-  mix-blend-mode: screen;
+  display: block;
 }
 .footer__text {
   color: rgba(255,255,255,0.4);
@@ -971,7 +981,7 @@ ul { list-style: none; }
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <a href="#" class="navbar__logo" aria-label="Eclipse Hawaii - Home">
-    <img src="logo_light_nav.png" alt="Eclipse Hawaii" width="206" height="60">
+    <img src="logo_white_nav.png" alt="Eclipse Hawaii" width="220" height="60">
   </a>
   <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
@@ -990,7 +1000,7 @@ ul { list-style: none; }
 
 <!-- ===== HERO ===== -->
 <section class="hero" aria-label="Hero section">
-  <img src="logo_light_hero.png" alt="Eclipse Hawaii Logo" class="hero__logo hero-reveal">
+  <img src="logo_white_hero.png" alt="Eclipse Hawaii Logo" class="hero__logo hero-reveal">
   <h1 class="hero__headline hero-reveal delay-1">
     <span>Commercial Cleaning.</span>
     <span>Every Surface.</span>
@@ -1048,7 +1058,7 @@ ul { list-style: none; }
         <h3 class="service-block__name">Commercial Glass &amp; Window Cleaning</h3>
         <p class="service-block__desc">Water-fed pole (WFP) pure water system combined with traditional squeegee technique. Multi-story capabilities for both interior and exterior glass surfaces. Storefronts, office buildings, and high-rise accessible floors. Streak-free results every time.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <div class="service-block__photo" role="img" aria-label="Commercial window cleaning service"></div>
+        <div class="service-block__photo" role="img" aria-label="Commercial window cleaning service" style="background-image: url('https://images.unsplash.com/photo-1632927063333-df848f5f916a?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
       <article class="service-block reveal reveal--right" id="svc-2">
@@ -1056,7 +1066,7 @@ ul { list-style: none; }
         <h3 class="service-block__name">Gas Station Canopy Cleaning</h3>
         <p class="service-block__desc">Full canopy surface cleaning including debris removal, hand scrubbing of stubborn stains, column inspection, and drain system checks. Keep your fuel station looking sharp and compliant. Before/after photo documentation included with every service.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <div class="service-block__photo" role="img" aria-label="Gas station canopy cleaning service"></div>
+        <div class="service-block__photo" role="img" aria-label="Gas station canopy cleaning service" style="background-image: url('https://images.unsplash.com/photo-1759282208951-909fa560689b?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
       <article class="service-block reveal reveal--right" id="svc-3">
@@ -1064,7 +1074,7 @@ ul { list-style: none; }
         <h3 class="service-block__name">Gutter &amp; Downspout Systems</h3>
         <p class="service-block__desc">Complete gutter clearing, downspout flushing, snake camera inspection for blockages and interior integrity, and minor repairs addressed on-site. Prevent water damage and protect your building's foundation year-round.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <div class="service-block__photo" role="img" aria-label="Gutter and downspout cleaning service"></div>
+        <div class="service-block__photo" role="img" aria-label="Gutter and downspout cleaning service" style="background-image: url('https://images.unsplash.com/photo-1744044155829-610dded4cead?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
       <article class="service-block reveal reveal--right" id="svc-4">
@@ -1072,7 +1082,7 @@ ul { list-style: none; }
         <h3 class="service-block__name">Solar Panel Cleaning</h3>
         <p class="service-block__desc">Pure water WFP rinse system to remove dust, bird debris, and salt buildup. Restore your panels to peak efficiency without harsh chemicals or abrasive tools. Includes TPO roof inspection while on-site.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <div class="service-block__photo" role="img" aria-label="Solar panel cleaning service"></div>
+        <div class="service-block__photo" role="img" aria-label="Solar panel cleaning service" style="background-image: url('https://images.unsplash.com/photo-1726795867801-63c0a37b80c6?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
       <article class="service-block reveal reveal--right" id="svc-5">
@@ -1080,7 +1090,7 @@ ul { list-style: none; }
         <h3 class="service-block__name">Roof &amp; Exterior Janitorial</h3>
         <p class="service-block__desc">Specialized cleaning for commercial roof surfaces including debris removal, surface treatment, and drainage maintenance. Ideal for retail, gas stations, and industrial properties. Extend the life of your roofing systems.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <div class="service-block__photo" role="img" aria-label="Roof and exterior janitorial service"></div>
+        <div class="service-block__photo" role="img" aria-label="Roof and exterior janitorial service" style="background-image: url('https://images.unsplash.com/photo-1624113651182-28d57b3d3fe0?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
       <article class="service-block reveal reveal--right" id="svc-6">
@@ -1088,7 +1098,7 @@ ul { list-style: none; }
         <h3 class="service-block__name">Recurring Maintenance Programs</h3>
         <p class="service-block__desc">Quarterly service agreements with preferred pricing. Scheduled visits, consistent crew, and documented reports after every visit. Multi-location coordination available for property management portfolios.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <div class="service-block__photo" role="img" aria-label="Recurring maintenance programs"></div>
+        <div class="service-block__photo" role="img" aria-label="Recurring maintenance programs" style="background-image: url('https://images.unsplash.com/photo-1642417188964-870c08705ef3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
     </div>
@@ -1274,7 +1284,7 @@ ul { list-style: none; }
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <img src="logo_dark_nav.png" alt="Eclipse Hawaii" class="footer__logo" width="206" height="60">
+  <img src="logo_white_nav.png" alt="Eclipse Hawaii" class="footer__logo" width="220" height="60">
   <p class="footer__text">Eclipse Cleaning LLC &middot; DBA Eclipse Hawaii &middot; Licensed &amp; Insured</p>
   <p class="footer__text">Honolulu, HI &middot; Serving all Hawaiian Islands</p>
   <p class="footer__text" style="margin-top: 16px;">&copy; 2026 Eclipse Cleaning LLC. All rights reserved.</p>
