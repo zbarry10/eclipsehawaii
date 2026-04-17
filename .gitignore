@@ -22,7 +22,8 @@ eclipse-trust-bar.html
 # === Screenshots & reference images (not for public site) ===
 screenshot_*.png
 Screenshot*.png
-Gemini_Generated_Image_*.png
+# Old draft Gemini image (not used anymore)
+Gemini_Generated_Image_xqnb45xqnb45xqnb.png
 
 # === System ===
 .DS_Store
