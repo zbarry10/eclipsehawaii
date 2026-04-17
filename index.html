@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclipse Hawaii | Commercial Glass & Exterior Cleaning</title>
+<meta name="description" content="Hawaii's commercial exterior cleaning specialist. Window cleaning, gas station canopy maintenance, gutter systems, solar panel care, and roof janitorial — serving all islands.">
+<meta name="keywords" content="commercial cleaning Hawaii, window cleaning Honolulu, gas station canopy cleaning, gutter cleaning Hawaii, solar panel cleaning Oahu, commercial glass cleaning">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Eclipse Hawaii | Commercial Glass & Exterior Cleaning">
+<meta property="og:description" content="Hawaii's commercial exterior cleaning specialist — serving businesses across all Hawaiian islands.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eclipsehawaii.com">
+<meta property="og:image" content="logo_blue_bg.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eclipse Hawaii | Commercial Exterior Cleaning">
+<meta name="twitter:description" content="Commercial cleaning. Every surface. Every island.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #231f20;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #1c75bc;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+ .navbar__logo img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  mix-blend-mode: screen;
+}
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.navbar__links a {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+.navbar__links a:hover {
+  opacity: 0.8;
+}
+.navbar__cta {
+  border: 2px solid #FFFFFF;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: background 0.3s, color 0.3s;
+}
+.navbar__cta:hover {
+  background: #FFFFFF;
+  color: #1c75bc !important;
+}
+
+/* Mobile nav toggle */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.navbar__toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #1c75bc;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  z-index: 10000;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== HERO ===== */
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes heroFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeUp 0.8s ease forwards;
+}
+.hero-reveal.delay-1 { animation-delay: 0.2s; }
+.hero-reveal.delay-2 { animation-delay: 0.4s; }
+.hero-reveal.delay-3 { animation-delay: 0.6s; }
+
+.hero {
+  background: linear-gradient(-45deg, #1c75bc, #2388d4, #0f4d80, #1c75bc);
+  background-size: 400% 400%;
+  animation: heroGradient 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 160px;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+}
+ .hero__logo {
+  max-width: 400px;
+  width: 70%;
+  margin-bottom: 40px;
+  filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+  mix-blend-mode: screen;
+}
+.hero__headline {
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero__headline span {
+  display: block;
+}
+ .hero__sub {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero__cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero__btn {
+  display: inline-block;
+  background: #FFFFFF;
+  color: #1c75bc;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.hero__btn--secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+.hero__btn--secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #FFFFFF;
+}
+
+/* ===== STATS BAR ===== */
+.stats {
+  background: #1a1a1a;
+  padding: 80px 48px;
+  position: relative;
+}
+.stats__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  gap: 24px;
+}
+.stat {
+  flex: 1;
+}
+.stat__number {
+  font-size: 72px;
+  font-weight: 900;
+  color: #1c75bc;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== SERVICES (Sticky Sidebar) ===== */
+.services {
+  background: #FFFFFF;
+  padding: 120px 0 80px;
+  position: relative;
+}
+.services__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  padding: 0 48px;
+}
+.services__sidebar {
+  width: 35%;
+  flex-shrink: 0;
+}
+.services__sidebar-sticky {
+  position: sticky;
+  top: 120px;
+}
+.services__sidebar-title {
+  font-weight: 900;
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #231f20;
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+.services__nav-item {
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: #231f20;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.3s, color 0.3s, padding-left 0.3s;
+  border-left: 3px solid transparent;
+  padding-left: 0;
+}
+.services__nav-item:hover {
+  opacity: 0.6;
+}
+.services__nav-item.active {
+  opacity: 1;
+  color: #1c75bc;
+  border-left-color: #1c75bc;
+  padding-left: 16px;
+}
+.services__content {
+  width: 65%;
+}
+.service-block {
+  margin-bottom: 100px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #e8e8e8;
+  transition: transform 0.4s ease;
+}
+.service-block:hover {
+  transform: translateY(-8px);
+}
+.service-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.service-block__number {
+  font-size: 96px;
+  font-weight: 900;
+  color: #1c75bc;
+  opacity: 0.12;
+  line-height: 1;
+  margin-bottom: -16px;
+}
+.service-block__name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #231f20;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+.service-block__desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+.service-block__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1c75bc;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  transition: gap 0.3s;
+}
+.service-block__link:hover {
+  gap: 12px;
+}
+.service-block__photo {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(28,117,188,0.05) 0%, rgba(35,136,212,0.1) 100%);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.service-block:hover .service-block__photo {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(28,117,188,0.15);
+}
+.service-block__photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(28,117,188,0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+.service-block:hover .service-block__photo::after {
+  opacity: 0.8;
+}
+.service-block__photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(28,117,188,0.1);
+  border-radius: 8px;
+  z-index: 2;
+  transition: border-color 0.4s;
+}
+.service-block:hover .service-block__photo::before {
+  border-color: rgba(28,117,188,0.3);
+}
+
+/* ===== INDUSTRIES ===== */
+.industries {
+  background: #f7f7f7;
+  padding: 100px 48px;
+}
+.industries__title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #231f20;
+  margin-bottom: 60px;
+}
+.industries__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.industry-card {
+  background: #FFFFFF;
+  padding: 32px 24px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.industry-card__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: #1c75bc;
+}
+.industry-card__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #231f20;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== WHY ECLIPSE ===== */
+.why {
+  background: #1a1a1a;
+  padding: 120px 48px;
+}
+.why__title {
+  text-align: center;
+  font-size: 56px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.why__card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 40px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.why__card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(28,117,188,0.3);
+}
+.why__card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.why__card h3 svg {
+  width: 28px;
+  height: 28px;
+  color: #1c75bc;
+  flex-shrink: 0;
+}
+.why__card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ===== ISLANDS ===== */
+.islands {
+  background: #1c75bc;
+  padding: 100px 48px;
+  clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+  position: relative;
+}
+.islands__title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 48px;
+}
+.islands__grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.island-card {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255,255,255,0.08);
+  padding: 32px 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s, transform 0.3s;
+}
+.island-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+.island-card__name {
+  font-size: 28px;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.island-card__tag {
+  display: inline-block;
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+.island-card__tag--home {
+  background: #FFFFFF;
+  color: #1c75bc;
+}
+.island-card__tag--other {
+  border: 2px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.9);
+}
+.island-card__note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: #FFFFFF;
+  padding: 120px 48px;
+}
+.contact__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+.contact__left {
+  flex: 1;
+}
+.contact__headline {
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: #231f20;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.contact__sub {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1c75bc;
+  transition: color 0.3s;
+}
+.contact__link:hover {
+  color: #2388d4;
+}
+.contact__link svg {
+  width: 20px;
+  height: 20px;
+}
+.contact__right {
+  flex: 1;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__input,
+.contact__select,
+.contact__textarea {
+  width: 100%;
+  padding: 16px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: #231f20;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.contact__input:focus,
+.contact__select:focus,
+.contact__textarea:focus {
+  border-color: #1c75bc;
+  box-shadow: 0 0 0 3px rgba(28,117,188,0.1);
+}
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: #999;
+}
+.contact__select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.contact__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.contact__submit {
+  width: 100%;
+  padding: 18px;
+  background: #1c75bc;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 8px;
+}
+.contact__submit:hover {
+  background: #2388d4;
+  transform: translateY(-1px);
+}
+.contact__note {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #1a1a1a;
+  padding: 60px 48px;
+  text-align: center;
+}
+.footer__logo {
+  height: 36px;
+  margin: 0 auto 20px;
+  mix-blend-mode: screen;
+}
+.footer__text {
+  color: rgba(255,255,255,0.4);
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.footer__text a {
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s;
+}
+.footer__text a:hover {
+  color: #FFFFFF;
+}
+
+/* ===== ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal--left {
+  transform: translateX(-60px);
+}
+.reveal--right {
+  transform: translateX(60px);
+}
+.reveal--up {
+  transform: translateY(40px);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  background: #f0f5f9;
+  padding: 100px 48px;
+  text-align: center;
+}
+.testimonials__title {
+  font-size: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #231f20;
+  margin-bottom: 60px;
+}
+.testimonial-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.testimonial-slide {
+  min-width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+.testimonial-slide p {
+  font-size: 20px;
+  font-style: italic;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.testimonial-author {
+  font-weight: 800;
+  color: #1c75bc;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.testimonial-company {
+  font-size: 14px;
+  color: #888;
+}
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dot.active {
+  background: #1c75bc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .industries__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 24px;
+  }
+  .navbar__links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: #1c75bc;
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    transform: translateY(-120%);
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .navbar__links.open {
+    transform: translateY(0);
+  }
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding: 100px 24px 140px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+  }
+  .hero__headline {
+    font-size: clamp(32px, 9vw, 56px);
+    letter-spacing: -1px;
+  }
+  .hero__logo {
+    max-width: 280px;
+  }
+  .hero__cta-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  .hero__btn {
+    width: 100%;
+    padding: 16px 32px;
+  }
+
+  .stats {
+    padding: 60px 24px;
+  }
+  .stats__inner {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .stat {
+    min-width: 45%;
+  }
+  .stat__number {
+    font-size: 48px;
+  }
+
+  .services__inner {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 40px;
+  }
+  .services__sidebar {
+    width: 100%;
+  }
+  .services__sidebar-sticky {
+    position: relative;
+    top: auto;
+  }
+  .services__sidebar-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  .services__nav-item {
+    display: none;
+  }
+  .services__content {
+    width: 100%;
+  }
+  .service-block__number {
+    font-size: 64px;
+  }
+  .service-block__name {
+    font-size: 22px;
+  }
+
+  .industries {
+    padding: 80px 24px;
+  }
+  .industries__title {
+    font-size: 32px;
+  }
+  .industries__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .why {
+    padding: 80px 24px;
+  }
+  .why__title {
+    font-size: 36px;
+    margin-bottom: 48px;
+  }
+  .why__card {
+    padding: 28px;
+  }
+
+  .islands {
+    padding: 80px 24px;
+    clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+  }
+  .islands__title {
+    font-size: 36px;
+  }
+  .islands__grid {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .island-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contact {
+    padding: 80px 24px;
+  }
+  .contact__inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .contact__headline {
+    font-size: 36px;
+  }
+
+  .footer {
+    padding: 48px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#" class="navbar__logo" aria-label="Eclipse Hawaii - Home">
+    <img src="logo_light_nav.png" alt="Eclipse Hawaii" width="206" height="60">
+  </a>
+  <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="navbar__links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#why">Why Eclipse</a>
+    <a href="#islands">Islands</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18085946973" class="navbar__cta">Call (808) 594-6973</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-label="Hero section">
+  <img src="logo_light_hero.png" alt="Eclipse Hawaii Logo" class="hero__logo hero-reveal">
+  <h1 class="hero__headline hero-reveal delay-1">
+    <span>Commercial Cleaning.</span>
+    <span>Every Surface.</span>
+    <span>Every Island.</span>
+  </h1>
+  <p class="hero__sub hero-reveal delay-2">Window cleaning, canopy & roof maintenance, gutter systems, and solar panel care — serving businesses across Hawaii with professional, fully-insured service.</p>
+  <div class="hero__cta-group hero-reveal delay-3">
+    <a href="#contact" class="hero__btn">Get a Free Site Inspection</a>
+    <a href="tel:+18085946973" class="hero__btn hero__btn--secondary">Call (808) 594-6973</a>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<section class="stats" aria-label="Company statistics">
+  <div class="stats__inner">
+    <div class="stat reveal reveal--up">
+      <div class="stat__number">4</div>
+      <div class="stat__label">Islands Served</div>
+    </div>
+    <div class="stat reveal reveal--up">
+      <div class="stat__number">6</div>
+      <div class="stat__label">Services</div>
+    </div>
+    <div class="stat reveal reveal--up">
+      <div class="stat__number">100%</div>
+      <div class="stat__label">Photo Documented</div>
+    </div>
+    <div class="stat reveal reveal--up">
+      <div class="stat__number">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <div class="stat__label">Fully Insured</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services" aria-labelledby="services-title">
+  <div class="services__inner">
+    <div class="services__sidebar">
+      <div class="services__sidebar-sticky">
+        <h2 id="services-title" class="services__sidebar-title">Our<br>Services</h2>
+        <div class="services__nav-item active" data-target="svc-1" role="button" tabindex="0">Commercial Glass &amp; Window Cleaning</div>
+        <div class="services__nav-item" data-target="svc-2" role="button" tabindex="0">Gas Station Canopy Cleaning</div>
+        <div class="services__nav-item" data-target="svc-3" role="button" tabindex="0">Gutter &amp; Downspout Systems</div>
+        <div class="services__nav-item" data-target="svc-4" role="button" tabindex="0">Solar Panel Cleaning</div>
+        <div class="services__nav-item" data-target="svc-5" role="button" tabindex="0">Roof &amp; Exterior Janitorial</div>
+        <div class="services__nav-item" data-target="svc-6" role="button" tabindex="0">Recurring Maintenance Programs</div>
+      </div>
+    </div>
+    <div class="services__content">
+
+      <article class="service-block reveal reveal--right" id="svc-1">
+        <div class="service-block__number">01</div>
+        <h3 class="service-block__name">Commercial Glass &amp; Window Cleaning</h3>
+        <p class="service-block__desc">Water-fed pole (WFP) pure water system combined with traditional squeegee technique. Multi-story capabilities for both interior and exterior glass surfaces. Storefronts, office buildings, and high-rise accessible floors. Streak-free results every time.</p>
+        <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <div class="service-block__photo" role="img" aria-label="Commercial window cleaning service"></div>
+      </article>
+
+      <article class="service-block reveal reveal--right" id="svc-2">
+        <div class="service-block__number">02</div>
+        <h3 class="service-block__name">Gas Station Canopy Cleaning</h3>
+        <p class="service-block__desc">Full canopy surface cleaning including debris removal, hand scrubbing of stubborn stains, column inspection, and drain system checks. Keep your fuel station looking sharp and compliant. Before/after photo documentation included with every service.</p>
+        <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <div class="service-block__photo" role="img" aria-label="Gas station canopy cleaning service"></div>
+      </article>
+
+      <article class="service-block reveal reveal--right" id="svc-3">
+        <div class="service-block__number">03</div>
+        <h3 class="service-block__name">Gutter &amp; Downspout Systems</h3>
+        <p class="service-block__desc">Complete gutter clearing, downspout flushing, snake camera inspection for blockages and interior integrity, and minor repairs addressed on-site. Prevent water damage and protect your building's foundation year-round.</p>
+        <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <div class="service-block__photo" role="img" aria-label="Gutter and downspout cleaning service"></div>
+      </article>
+
+      <article class="service-block reveal reveal--right" id="svc-4">
+        <div class="service-block__number">04</div>
+        <h3 class="service-block__name">Solar Panel Cleaning</h3>
+        <p class="service-block__desc">Pure water WFP rinse system to remove dust, bird debris, and salt buildup. Restore your panels to peak efficiency without harsh chemicals or abrasive tools. Includes TPO roof inspection while on-site.</p>
+        <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <div class="service-block__photo" role="img" aria-label="Solar panel cleaning service"></div>
+      </article>
+
+      <article class="service-block reveal reveal--right" id="svc-5">
+        <div class="service-block__number">05</div>
+        <h3 class="service-block__name">Roof &amp; Exterior Janitorial</h3>
+        <p class="service-block__desc">Specialized cleaning for commercial roof surfaces including debris removal, surface treatment, and drainage maintenance. Ideal for retail, gas stations, and industrial properties. Extend the life of your roofing systems.</p>
+        <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <div class="service-block__photo" role="img" aria-label="Roof and exterior janitorial service"></div>
+      </article>
+
+      <article class="service-block reveal reveal--right" id="svc-6">
+        <div class="service-block__number">06</div>
+        <h3 class="service-block__name">Recurring Maintenance Programs</h3>
+        <p class="service-block__desc">Quarterly service agreements with preferred pricing. Scheduled visits, consistent crew, and documented reports after every visit. Multi-location coordination available for property management portfolios.</p>
+        <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <div class="service-block__photo" role="img" aria-label="Recurring maintenance programs"></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="industries" id="industries" aria-labelledby="industries-title">
+  <h2 id="industries-title" class="industries__title">Industries We Serve</h2>
+  <div class="industries__grid">
+    <div class="industry-card reveal reveal--up">
+      <div class="industry-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <div class="industry-card__name">Gas Stations &amp; Petroleum</div>
+    </div>
+    <div class="industry-card reveal reveal--up">
+      <div class="industry-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+      </div>
+      <div class="industry-card__name">Office Buildings &amp; CRE</div>
+    </div>
+    <div class="industry-card reveal reveal--up">
+      <div class="industry-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </div>
+      <div class="industry-card__name">Retail &amp; Shopping Centers</div>
+    </div>
+    <div class="industry-card reveal reveal--up">
+      <div class="industry-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <div class="industry-card__name">Hotels &amp; Hospitality</div>
+    </div>
+    <div class="industry-card reveal reveal--up">
+      <div class="industry-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+      </div>
+      <div class="industry-card__name">Condominiums &amp; HOAs</div>
+    </div>
+    <div class="industry-card reveal reveal--up">
+      <div class="industry-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </div>
+      <div class="industry-card__name">Solar Installations</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ECLIPSE ===== -->
+<section class="why" id="why" aria-labelledby="why-title">
+  <h2 id="why-title" class="why__title reveal reveal--up">Why Eclipse</h2>
+  <div class="why__grid">
+    <div class="why__card reveal reveal--up">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        Fully Insured &amp; Professional
+      </h3>
+      <p>Every job is backed by comprehensive General Liability, Umbrella, and Commercial Auto insurance at required coverage limits. Our crews are trained, uniformed, and held to strict safety standards.</p>
+    </div>
+    <div class="why__card reveal reveal--up">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        Every Job Photo-Documented
+      </h3>
+      <p>Before and after photos for every service visit. Property managers get a complete visual record — no ambiguity about what was done or the condition of your building.</p>
+    </div>
+    <div class="why__card reveal reveal--up">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        Island-Wide Coverage
+      </h3>
+      <p>Based on Oahu with regular service runs to Maui, Big Island, and Kauai. One company, one standard of quality, across all four major Hawaiian islands.</p>
+    </div>
+    <div class="why__card reveal reveal--up">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        Commercial-Grade Equipment
+      </h3>
+      <p>Water-fed pole systems, pure water filtration, lift-equipped vehicles, and professional-grade tools. We invest in the best equipment so your property gets the best results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ISLANDS ===== -->
+<section class="islands" id="islands" aria-labelledby="islands-title">
+  <h2 id="islands-title" class="islands__title reveal reveal--up">Service Areas</h2>
+  <div class="islands__grid">
+    <div class="island-card reveal reveal--left">
+      <div class="island-card__name">Oahu</div>
+      <span class="island-card__tag island-card__tag--home">Home Base</span>
+      <div class="island-card__note">3 weeks advance scheduling</div>
+    </div>
+    <div class="island-card reveal reveal--up">
+      <div class="island-card__name">Maui</div>
+      <span class="island-card__tag island-card__tag--other">Full Service</span>
+      <div class="island-card__note">6 weeks advance notice</div>
+    </div>
+    <div class="island-card reveal reveal--up">
+      <div class="island-card__name">Big Island</div>
+      <span class="island-card__tag island-card__tag--other">Kona &amp; Hilo</span>
+      <div class="island-card__note">6 weeks advance notice</div>
+    </div>
+    <div class="island-card reveal reveal--right">
+      <div class="island-card__name">Kauai</div>
+      <span class="island-card__tag island-card__tag--other">Full Service</span>
+      <div class="island-card__note">6 weeks advance notice</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+  <h2 id="testimonials-title" class="testimonials__title reveal reveal--up">Trusted by Hawaii's Best</h2>
+  <div class="testimonial-slider reveal reveal--up">
+    <div class="testimonial-track" id="testimonialTrack">
+      <div class="testimonial-slide">
+        <p>"Eclipse handles all our canopy cleaning across Oahu. Their attention to detail and consistent photo reporting gives us complete peace of mind."</p>
+        <div class="testimonial-author">Sarah M.</div>
+        <div class="testimonial-company">Regional Facilities Manager</div>
+      </div>
+      <div class="testimonial-slide">
+        <p>"We rely on them for our high-rise exterior glass. They are safe, reliable, and the results are always perfect. Highly recommend Gabe and his team."</p>
+        <div class="testimonial-author">David K.</div>
+        <div class="testimonial-company">Property Management Corp.</div>
+      </div>
+      <div class="testimonial-slide">
+        <p>"They tackled our solar array cleaning and our output efficiency went up noticeably the next week. Very professional crew."</p>
+        <div class="testimonial-author">Michael T.</div>
+        <div class="testimonial-company">Solar Operations Director</div>
+      </div>
+    </div>
+    <div class="testimonial-dots" id="testimonialDots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact__inner">
+    <div class="contact__left reveal reveal--left">
+      <h2 id="contact-title" class="contact__headline">Get Your Free Site Inspection</h2>
+      <p class="contact__sub">Tell us about your property and we'll schedule a complimentary on-site inspection with a detailed quote.</p>
+      <div class="contact__info">
+        <a href="tel:+18085946973" class="contact__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (808) 594-6973
+        </a>
+        <a href="mailto:gabe@eclipsehawaii.com" class="contact__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          gabe@eclipsehawaii.com
+        </a>
+      </div>
+    </div>
+    <div class="contact__right reveal reveal--right">
+      <form class="contact__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Contact form">
+        <input type="text" name="name" class="contact__input" placeholder="Your Name" required aria-required="true">
+        <input type="email" name="email" class="contact__input" placeholder="Email Address" required aria-required="true">
+        <input type="tel" name="phone" class="contact__input" placeholder="Phone Number">
+        <input type="text" name="company" class="contact__input" placeholder="Property / Company Name">
+        <select name="service" class="contact__select" aria-label="Service needed">
+          <option value="" disabled selected>Service Needed</option>
+          <option value="window">Window Cleaning</option>
+          <option value="canopy">Canopy Cleaning</option>
+          <option value="gutter">Gutter Cleaning</option>
+          <option value="solar">Solar Panel Cleaning</option>
+          <option value="roof">Roof/Exterior Janitorial</option>
+          <option value="multiple">Multiple Services</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea name="message" class="contact__textarea" placeholder="Tell us about your project..."></textarea>
+        <button type="submit" class="contact__submit">Request Inspection</button>
+      </form>
+      <p class="contact__note">We respond within 24 hours. All quotes include a complimentary on-site inspection.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <img src="logo_dark_nav.png" alt="Eclipse Hawaii" class="footer__logo" width="206" height="60">
+  <p class="footer__text">Eclipse Cleaning LLC &middot; DBA Eclipse Hawaii &middot; Licensed &amp; Insured</p>
+  <p class="footer__text">Honolulu, HI &middot; Serving all Hawaiian Islands</p>
+  <p class="footer__text" style="margin-top: 16px;">&copy; 2026 Eclipse Cleaning LLC. All rights reserved.</p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ===== NAVBAR SCROLL SHADOW =====
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // ===== MOBILE NAV TOGGLE =====
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+
+  toggle.addEventListener('click', function() {
+    const isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close nav when a link is clicked
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ===== STATS COUNTER =====
+  var statNumbers = document.querySelectorAll('.stat__number');
+  var statsObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        var text = el.innerText.trim();
+        if(!isNaN(parseInt(text)) && !el.classList.contains('counted')) {
+          el.classList.add('counted');
+          var targetVal = parseInt(text);
+          var currentVal = 0;
+          var suffix = text.replace(/[0-9]/g, '');
+          var duration = 2000;
+          var stepTime = Math.abs(Math.floor(duration / targetVal));
+          var timer = setInterval(function() {
+            currentVal += 1;
+            el.innerText = currentVal + suffix;
+            if (currentVal >= targetVal) clearInterval(timer);
+          }, stepTime);
+        }
+        statsObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  statNumbers.forEach(function(el) { statsObs.observe(el); });
+
+  // ===== TESTIMONIAL SLIDER =====
+  var track = document.getElementById('testimonialTrack');
+  var dots = document.querySelectorAll('.dot');
+  if (track && dots.length > 0) {
+    var currentIndex = 0;
+    function goToSlide(index) {
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dots.forEach(d => d.classList.remove('active'));
+      dots[index].classList.add('active');
+      currentIndex = index;
+    }
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        goToSlide(parseInt(this.getAttribute('data-index')));
+      });
+    });
+    setInterval(function() {
+      goToSlide((currentIndex + 1) % dots.length);
+    }, 5000);
+  }
+
+  // ===== INTERSECTION OBSERVER: REVEAL ANIMATIONS =====
+  var reveals = document.querySelectorAll('.reveal');
+  var revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(function(el) { revealObs.observe(el); });
+
+  // ===== STICKY SIDEBAR: HIGHLIGHT ACTIVE SERVICE =====
+  var serviceBlocks = document.querySelectorAll('.service-block');
+  var navItems = document.querySelectorAll('.services__nav-item');
+
+  var sidebarObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        navItems.forEach(function(item) {
+          item.classList.toggle('active', item.getAttribute('data-target') === id);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-100px 0px -40% 0px' });
+  serviceBlocks.forEach(function(block) { sidebarObs.observe(block); });
+
+  // Click sidebar nav to scroll
+  navItems.forEach(function(item) {
+    var clickHandler = function() {
+      var target = document.getElementById(item.getAttribute('data-target'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    };
+    item.addEventListener('click', clickHandler);
+    item.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        clickHandler();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

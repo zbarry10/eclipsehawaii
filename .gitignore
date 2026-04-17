@@ -1,0 +1,29 @@
+# === Secrets — NEVER commit ===
+use_kimi.sh
+.claude/
+.env
+.env.local
+*.key
+
+# === Dev tooling (Playwright for local screenshotting, not site runtime) ===
+node_modules/
+package.json
+package-lock.json
+
+# === Reference / internal docs (not for public site) ===
+KIMI_SETUP.md
+Eclipse_Website_Spec.md
+Eclipse_Website_Mockup_Deck.pdf
+
+# === Draft designs (not for public site) ===
+mockup_*.html
+eclipse-trust-bar.html
+
+# === Screenshots & reference images (not for public site) ===
+screenshot_*.png
+Screenshot*.png
+Gemini_Generated_Image_*.png
+
+# === System ===
+.DS_Store
+Thumbs.db
