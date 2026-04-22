@@ -1162,15 +1162,24 @@ ul { list-style: none; }
 }
 .industry-card {
   background: #FFFFFF;
-  padding: 32px 24px;
+  padding: 32px 26px 28px;
   border-radius: 4px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .industry-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.industry-card__desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #555;
+  margin-top: 10px;
 }
 .industry-card__icon {
   width: 48px;
@@ -2517,36 +2526,42 @@ ul { list-style: none; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       </div>
       <div class="industry-card__name">Gas Stations &amp; Petroleum</div>
+      <p class="industry-card__desc">Canopy surface cleaning, fuel-island debris management, and entry-door glazing for 24/7 operations where brand appearance and compliance both matter. Photo-documented every visit.</p>
     </div>
     <div class="industry-card reveal reveal--up">
       <div class="industry-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
       </div>
       <div class="industry-card__name">Office Buildings &amp; CRE</div>
+      <p class="industry-card__desc">Curtain-wall exterior glass, ground-floor storefronts, and high-rise accessible floors for property managers coordinating multi-tenant schedules across Honolulu and greater Oahu.</p>
     </div>
     <div class="industry-card reveal reveal--up">
       <div class="industry-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
       </div>
       <div class="industry-card__name">Retail &amp; Shopping Centers</div>
+      <p class="industry-card__desc">Storefront glass, mall common-area windows, and recurring maintenance programs that keep tenant-facing surfaces consistently presentable across Ala Moana, Kakaako, and suburban centers.</p>
     </div>
     <div class="industry-card reveal reveal--up">
       <div class="industry-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       </div>
       <div class="industry-card__name">Hotels &amp; Hospitality</div>
+      <p class="industry-card__desc">Multi-story exterior window cleaning, hospitality-grade streak-free finishing, and scheduling that works around guest-facing hours — serving Waikiki and resort properties across the islands.</p>
     </div>
     <div class="industry-card reveal reveal--up">
       <div class="industry-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
       </div>
       <div class="industry-card__name">Condominiums &amp; HOAs</div>
+      <p class="industry-card__desc">Shared balcony glass, building-wide exterior glazing, and recurring programs that align with HOA budget cycles. Mid- and high-rise residential towers across Oahu and neighbor-island developments.</p>
     </div>
     <div class="industry-card reveal reveal--up">
       <div class="industry-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       </div>
       <div class="industry-card__name">Solar Installations</div>
+      <p class="industry-card__desc">Rooftop commercial arrays, ground-mount systems, and carport installations — pure-water WFP cleaning that protects panel coatings and manufacturer warranties. Every Hawaiian island.</p>
     </div>
   </div>
 </section>
