@@ -503,11 +503,197 @@ ul { list-style: none; }
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   transition: background 0.3s, border-color 0.3s, transform 0.2s;
+  text-decoration: none;
 }
 .service-block__roi:hover {
   background: rgba(28,117,188,0.14);
   border-color: rgba(28,117,188,0.5);
   transform: translateY(-1px);
+}
+
+/* ===== SOLAR SAVINGS SECTION ===== */
+.solar-savings {
+  position: relative;
+  padding: 120px 48px 140px;
+  background:
+    linear-gradient(135deg, rgba(15,77,128,0.93) 0%, rgba(28,117,188,0.88) 45%, rgba(15,77,128,0.94) 100%),
+    url('photo_solar.jpg') center/cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+.solar-savings__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.solar-savings__intro {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.solar-savings__eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.solar-savings__title {
+  font-size: clamp(36px, 5.5vw, 58px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.solar-savings__title span {
+  color: #ffcc3d;
+}
+.solar-savings__sub {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.88);
+}
+
+.solar-card {
+  background: #ffffff;
+  color: #231f20;
+  border-radius: 12px;
+  padding: 44px 48px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.28);
+  position: relative;
+}
+.solar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffcc3d 0%, #ffa500 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.solar-card__cta {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.solar-card__cta .btn {
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+  text-align: center;
+  padding: 18px 28px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+.solar-card__cta .btn--primary {
+  background: #1c75bc;
+  color: #fff;
+  border: 2px solid #1c75bc;
+}
+.solar-card__cta .btn--primary:hover {
+  background: #2388d4;
+  border-color: #2388d4;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(28,117,188,0.35);
+}
+.solar-card__cta .btn--ghost {
+  background: transparent;
+  color: #1c75bc;
+  border: 2px solid #1c75bc;
+}
+.solar-card__cta .btn--ghost:hover {
+  background: #1c75bc;
+  color: #fff;
+}
+
+/* Case study as collapsible details */
+.solar-case {
+  margin-top: 32px;
+  background: #f7fafd;
+  border-radius: 10px;
+  border: 1px solid #e3e9ef;
+  overflow: hidden;
+}
+.solar-case > summary {
+  padding: 20px 28px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1c75bc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background 0.2s;
+}
+.solar-case > summary:hover {
+  background: #edf4fa;
+}
+.solar-case > summary::-webkit-details-marker { display: none; }
+.solar-case > summary::after {
+  content: '+';
+  font-size: 22px;
+  font-weight: 900;
+  transition: transform 0.3s;
+}
+.solar-case[open] > summary::after {
+  content: '\2212'; /* minus */
+}
+.solar-case__body {
+  padding: 8px 28px 28px;
+  border-top: 1px dashed #d6e2ed;
+}
+.solar-case__tag {
+  display: inline-block;
+  padding: 5px 12px;
+  background: rgba(28,117,188,0.12);
+  color: #1c75bc;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 18px 0 10px;
+}
+.solar-case__title {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: #231f20;
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+.solar-case__sub {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 680px) {
+  .solar-savings { padding: 72px 20px 80px; }
+  .solar-card { padding: 28px 22px; }
+  .solar-case > summary { padding: 16px 20px; font-size: 12px; }
+  .solar-case__body { padding: 8px 20px 22px; }
 }
 
 /* ===== ROI MODAL ===== */
@@ -1567,11 +1753,11 @@ ul { list-style: none; }
     <span></span><span></span><span></span>
   </button>
   <div class="navbar__links" id="navLinks">
-    <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#industries">Industries</a>
+    <a href="#solar-roi">Solar ROI</a>
     <a href="#why">Why Eclipse</a>
     <a href="#islands">Islands</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <a href="tel:+18085946973" class="navbar__cta">Call (808) 594-6973</a>
   </div>
@@ -1614,24 +1800,6 @@ ul { list-style: none; }
         <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle;"><polyline points="20 6 9 17 4 12"></polyline></svg>
       </div>
       <div class="stat__label">Fully Insured</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section class="about" id="about" aria-labelledby="about-title">
-  <div class="about__inner">
-    <div class="reveal reveal--left">
-      <div class="about__eyebrow">Our Story</div>
-      <h2 id="about-title" class="about__title">Built for<br>the long<br><span>haul.</span></h2>
-    </div>
-    <div class="about__body reveal reveal--right">
-      <p>Eclipse was born from a simple motivation — <strong>Gabe Schroeder was about to become a father and needed to build something real.</strong> What started as side work quickly turned into a genuine passion, and after seven years in the trade Eclipse emerged as the professional expression of everything he'd learned.</p>
-      <p>Gabe focuses on commercial and B2B work because the relationships are built to last — and that suits how he operates. <strong>Honest, reliable, and thorough aren't just words on a website.</strong> They're the standard every job is held to, because the people and places Eclipse serves actually matter.</p>
-      <div class="about__signature">
-        Gabe Schroeder
-        <span>Founder &middot; Eclipse Cleaning LLC</span>
-      </div>
     </div>
   </div>
 </section>
@@ -1681,10 +1849,10 @@ ul { list-style: none; }
         <h3 class="service-block__name">Solar Panel Cleaning</h3>
         <p class="service-block__desc">Pure water WFP rinse system to remove dust, bird debris, and salt buildup — no harsh chemicals, no abrasive tools. Dirty panels can lose 15-25% of their output; regular cleanings restore peak efficiency, keep your electric bill where it should be, and protect the ROI on your solar investment.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
-        <button type="button" class="service-block__roi" data-roi-open aria-haspopup="dialog" aria-controls="roiModal">
-          See the ROI math
-          <span aria-hidden="true">→</span>
-        </button>
+        <a href="#solar-roi" class="service-block__roi">
+          Try the savings calculator
+          <span aria-hidden="true">↓</span>
+        </a>
         <div class="service-block__photo" role="img" aria-label="Solar panel cleaning service" style="background-image: url('photo_solar.jpg');"></div>
       </article>
 
@@ -1704,6 +1872,121 @@ ul { list-style: none; }
         <div class="service-block__photo" role="img" aria-label="Recurring maintenance programs" style="background-image: url('https://images.unsplash.com/photo-1642417188964-870c08705ef3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLAR SAVINGS CALCULATOR ===== -->
+<section class="solar-savings" id="solar-roi" aria-labelledby="solar-roi-title">
+  <div class="solar-savings__inner">
+    <div class="solar-savings__intro reveal reveal--up">
+      <div class="solar-savings__eyebrow">Solar Panel ROI</div>
+      <h2 id="solar-roi-title" class="solar-savings__title">Is cleaning your panels <span>worth it?</span></h2>
+      <p class="solar-savings__sub">Hawaii has some of the highest electric rates in the country. Dirty solar panels can quietly cost you thousands per year. Run your numbers — the math updates live.</p>
+    </div>
+
+    <div class="solar-card reveal reveal--up">
+      <!-- ===== INTERACTIVE CALCULATOR ===== -->
+      <div class="roi-calc" id="roiCalc" style="margin-top: 0; padding-top: 0; border-top: none;">
+        <div class="roi-calc__grid">
+          <div class="roi-field">
+            <label class="roi-field__label" for="calcPanels">Number of Panels</label>
+            <div class="roi-field__input-wrap">
+              <input type="number" id="calcPanels" class="roi-field__input" min="1" max="2000" step="1" value="240" inputmode="numeric" aria-label="Number of panels">
+            </div>
+            <input type="range" class="roi-field__range" id="calcPanelsRange" min="10" max="800" step="5" value="240" aria-label="Number of panels slider">
+          </div>
+
+          <div class="roi-field">
+            <label class="roi-field__label" for="calcMonths">Months Since Last Clean</label>
+            <div class="roi-field__input-wrap">
+              <input type="number" id="calcMonths" class="roi-field__input" min="0" max="60" step="1" value="12" inputmode="numeric" aria-label="Months since last cleaning">
+            </div>
+            <input type="range" class="roi-field__range" id="calcMonthsRange" min="0" max="36" step="1" value="12" aria-label="Months slider">
+          </div>
+
+          <div class="roi-field">
+            <label class="roi-field__label" for="calcRate">HECO Rate ($&#47;kWh)</label>
+            <div class="roi-field__input-wrap">
+              <span class="roi-field__prefix">$</span>
+              <input type="number" id="calcRate" class="roi-field__input" min="0.20" max="0.70" step="0.01" value="0.42" inputmode="decimal" aria-label="HECO rate">
+            </div>
+            <input type="range" class="roi-field__range" id="calcRateRange" min="0.25" max="0.60" step="0.01" value="0.42" aria-label="HECO rate slider">
+          </div>
+        </div>
+
+        <div class="roi-calc__derived">
+          <div>
+            <div class="roi-derived__label">System Size</div>
+            <div class="roi-derived__value" id="calcSize">96 kW</div>
+          </div>
+          <div>
+            <div class="roi-derived__label">Monthly Output (Clean)</div>
+            <div class="roi-derived__value" id="calcOutput">15,840 kWh</div>
+          </div>
+          <div>
+            <div class="roi-derived__label">Est. Efficiency Loss</div>
+            <div class="roi-derived__value" id="calcLoss">14%</div>
+          </div>
+        </div>
+
+        <div class="roi-calc__result" id="calcResult">
+          <div class="roi-calc__eyebrow">Estimated Net Annual Benefit From Cleaning</div>
+          <div class="roi-calc__value" id="calcNet">$8,769 / year</div>
+          <div class="roi-calc__breakdown">
+            <span>Lost revenue recovered: <strong id="calcRecovered">$11,649</strong></span>
+            <span>Annual cleaning cost: <strong id="calcCost">~$2,880</strong></span>
+          </div>
+        </div>
+
+        <p class="roi-calc__footnote">
+          Cleaning cost assumes ~$3 per panel per visit, 4 visits per year (quarterly). Efficiency loss model: ~1.2% per month of uncleaned soiling, capped at 25%. Hawaii loss rates vary with coastal salt, pollen, and bird activity — an on-site inspection gives the real number.
+        </p>
+      </div>
+
+      <!-- ===== CASE STUDY (COLLAPSIBLE) ===== -->
+      <!-- NOTE: Numbers below are an illustrative example using a typical
+           Hawaii commercial system. To replace with a real client case
+           study later, update the fields marked /* EDIT: ... */ -->
+      <details class="solar-case">
+        <summary>See a detailed example: 100&nbsp;kW Oahu rooftop system</summary>
+        <div class="solar-case__body">
+          <!-- EDIT: change tag to "Client Case Study" when a real client replaces this -->
+          <span class="solar-case__tag">Illustrative Example</span>
+          <!-- EDIT: replace title with real client property name -->
+          <div class="solar-case__title">Waikiki Retail Property &mdash; Rooftop Array</div>
+          <!-- EDIT: swap in real location, install year, property type -->
+          <div class="solar-case__sub">Example based on a typical 100&nbsp;kW commercial rooftop system on Oahu, ~18 months since last cleaning</div>
+
+          <div class="roi-modal__compare">
+            <div class="roi-col roi-col--bad">
+              <div class="roi-col__title">Dirty &mdash; Current</div>
+              <div class="roi-row"><span>Monthly output</span><strong>9,600 kWh</strong></div>
+              <div class="roi-row"><span>Efficiency loss</span><strong>~20%</strong></div>
+              <div class="roi-row"><span>Offset at $0.42/kWh</span><strong>$4,032/mo</strong></div>
+              <div class="roi-row"><span>Lost revenue</span><strong>$1,008/mo</strong></div>
+            </div>
+            <div class="roi-col roi-col--good">
+              <div class="roi-col__title">Cleaned &mdash; Restored</div>
+              <div class="roi-row"><span>Monthly output</span><strong>12,000 kWh</strong></div>
+              <div class="roi-row"><span>Efficiency loss</span><strong>0&ndash;3%</strong></div>
+              <div class="roi-row"><span>Offset at $0.42/kWh</span><strong>$5,040/mo</strong></div>
+              <div class="roi-row"><span>Recovered revenue</span><strong>+$1,008/mo</strong></div>
+            </div>
+          </div>
+
+          <div class="roi-summary" style="margin-top: 20px; margin-bottom: 0;">
+            <div class="roi-summary__eyebrow">Net Annual Benefit</div>
+            <div class="roi-summary__value">~$9,000 / year</div>
+            <div class="roi-summary__note">$12,096 recovered &minus; ~$3,000 in quarterly cleanings</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="solar-card__cta">
+        <a href="#contact" class="btn btn--primary">Request My Site Estimate</a>
+        <a href="tel:+18085946973" class="btn btn--ghost">Call (808) 594&#8209;6973</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1849,6 +2132,24 @@ ul { list-style: none; }
   </div>
 </section>
 
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="about__inner">
+    <div class="reveal reveal--left">
+      <div class="about__eyebrow">Our Story</div>
+      <h2 id="about-title" class="about__title">Built for<br>the long<br><span>haul.</span></h2>
+    </div>
+    <div class="about__body reveal reveal--right">
+      <p>Eclipse was born from a simple motivation — <strong>Gabe Schroeder was about to become a father and needed to build something real.</strong> What started as side work quickly turned into a genuine passion, and after seven years in the trade Eclipse emerged as the professional expression of everything he'd learned.</p>
+      <p>Gabe focuses on commercial and B2B work because the relationships are built to last — and that suits how he operates. <strong>Honest, reliable, and thorough aren't just words on a website.</strong> They're the standard every job is held to, because the people and places Eclipse serves actually matter.</p>
+      <div class="about__signature">
+        Gabe Schroeder
+        <span>Founder &middot; Eclipse Cleaning LLC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="contact__inner">
@@ -1891,149 +2192,6 @@ ul { list-style: none; }
 </section>
 
 </main>
-
-<!-- ===== SOLAR ROI CASE STUDY MODAL ===== -->
-<!-- NOTE: The numbers below are an illustrative example using typical
-     Hawaii commercial rates (HECO ~$0.42/kWh) and a 100 kW system.
-     To replace with a real client case study, update the fields
-     marked with /* EDIT: ... */ comments. -->
-<div class="roi-modal" id="roiModal" role="dialog" aria-modal="true" aria-labelledby="roiTitle" aria-describedby="roiSub">
-  <div class="roi-modal__panel">
-    <button type="button" class="roi-modal__close" data-roi-close aria-label="Close">&times;</button>
-
-    <div class="roi-modal__header">
-      <!-- EDIT: change tag to "Client Case Study" when a real client replaces this -->
-      <span class="roi-modal__tag">Illustrative Example</span>
-      <!-- EDIT: replace title with real client property name -->
-      <h3 class="roi-modal__title" id="roiTitle">Waikiki Retail Property &mdash; Rooftop Array</h3>
-      <!-- EDIT: swap in real location, install year, property type -->
-      <p class="roi-modal__sub" id="roiSub">Example based on a typical 100&nbsp;kW commercial rooftop system on Oahu</p>
-    </div>
-
-    <div class="roi-modal__body">
-
-      <!-- SYSTEM SPECS -->
-      <div class="roi-modal__section-label">System at a Glance</div>
-      <div class="roi-modal__system">
-        <div class="roi-modal__sys-item">
-          <div class="roi-modal__sys-value">100 kW</div>
-          <div class="roi-modal__sys-label">System Size</div>
-        </div>
-        <div class="roi-modal__sys-item">
-          <div class="roi-modal__sys-value">240</div>
-          <div class="roi-modal__sys-label">Panels</div>
-        </div>
-        <div class="roi-modal__sys-item">
-          <div class="roi-modal__sys-value">$0.42</div>
-          <div class="roi-modal__sys-label">HECO &#47; kWh</div>
-        </div>
-        <div class="roi-modal__sys-item">
-          <div class="roi-modal__sys-value">~18 mo</div>
-          <div class="roi-modal__sys-label">Since Last Clean</div>
-        </div>
-      </div>
-
-      <!-- BEFORE vs AFTER -->
-      <div class="roi-modal__section-label">Before &amp; After Cleaning</div>
-      <div class="roi-modal__compare">
-        <div class="roi-col roi-col--bad">
-          <div class="roi-col__title">Dirty &mdash; Current</div>
-          <div class="roi-row"><span>Monthly output</span><strong>9,600 kWh</strong></div>
-          <div class="roi-row"><span>Efficiency loss</span><strong>~20%</strong></div>
-          <div class="roi-row"><span>Offset at $0.42/kWh</span><strong>$4,032/mo</strong></div>
-          <div class="roi-row"><span>Lost revenue</span><strong>$1,008/mo</strong></div>
-        </div>
-        <div class="roi-col roi-col--good">
-          <div class="roi-col__title">Cleaned &mdash; Restored</div>
-          <div class="roi-row"><span>Monthly output</span><strong>12,000 kWh</strong></div>
-          <div class="roi-row"><span>Efficiency loss</span><strong>0&ndash;3%</strong></div>
-          <div class="roi-row"><span>Offset at $0.42/kWh</span><strong>$5,040/mo</strong></div>
-          <div class="roi-row"><span>Recovered revenue</span><strong>+$1,008/mo</strong></div>
-        </div>
-      </div>
-
-      <!-- ANNUAL SUMMARY -->
-      <div class="roi-summary">
-        <div class="roi-summary__eyebrow">Net Annual Benefit</div>
-        <div class="roi-summary__value">~$9,000 / year</div>
-        <div class="roi-summary__note">$12,096 recovered &minus; ~$3,000 in quarterly cleanings</div>
-      </div>
-
-      <p class="roi-disclaimer">
-        <strong>Illustrative example.</strong> Actual savings depend on system size, tilt, location,
-        soiling rate, and utility rate plan. Hawaii rates (HECO/HELCO/KIUC) are among the highest
-        in the US, which typically makes routine cleaning pay for itself within weeks for
-        commercial systems. Ask Eclipse for a site-specific estimate.
-      </p>
-
-      <!-- ===== INTERACTIVE CALCULATOR ===== -->
-      <div class="roi-calc" id="roiCalc">
-        <div class="roi-calc__title">Run the numbers on your system</div>
-        <p class="roi-calc__sub">Drag the sliders or type your numbers. Estimates update live using ~5.5 peak-sun hrs/day (Hawaii average) and ~400W per panel.</p>
-
-        <div class="roi-calc__grid">
-          <div class="roi-field">
-            <label class="roi-field__label" for="calcPanels">Number of Panels</label>
-            <div class="roi-field__input-wrap">
-              <input type="number" id="calcPanels" class="roi-field__input" min="1" max="2000" step="1" value="240" inputmode="numeric" aria-label="Number of panels">
-            </div>
-            <input type="range" class="roi-field__range" id="calcPanelsRange" min="10" max="800" step="5" value="240" aria-label="Number of panels slider">
-          </div>
-
-          <div class="roi-field">
-            <label class="roi-field__label" for="calcMonths">Months Since Last Clean</label>
-            <div class="roi-field__input-wrap">
-              <input type="number" id="calcMonths" class="roi-field__input" min="0" max="60" step="1" value="12" inputmode="numeric" aria-label="Months since last cleaning">
-            </div>
-            <input type="range" class="roi-field__range" id="calcMonthsRange" min="0" max="36" step="1" value="12" aria-label="Months slider">
-          </div>
-
-          <div class="roi-field">
-            <label class="roi-field__label" for="calcRate">HECO Rate ($&#47;kWh)</label>
-            <div class="roi-field__input-wrap">
-              <span class="roi-field__prefix">$</span>
-              <input type="number" id="calcRate" class="roi-field__input" min="0.20" max="0.70" step="0.01" value="0.42" inputmode="decimal" aria-label="HECO rate">
-            </div>
-            <input type="range" class="roi-field__range" id="calcRateRange" min="0.25" max="0.60" step="0.01" value="0.42" aria-label="HECO rate slider">
-          </div>
-        </div>
-
-        <div class="roi-calc__derived">
-          <div>
-            <div class="roi-derived__label">System Size</div>
-            <div class="roi-derived__value" id="calcSize">96 kW</div>
-          </div>
-          <div>
-            <div class="roi-derived__label">Monthly Output (Clean)</div>
-            <div class="roi-derived__value" id="calcOutput">15,840 kWh</div>
-          </div>
-          <div>
-            <div class="roi-derived__label">Est. Efficiency Loss</div>
-            <div class="roi-derived__value" id="calcLoss">18%</div>
-          </div>
-        </div>
-
-        <div class="roi-calc__result" id="calcResult">
-          <div class="roi-calc__eyebrow">Estimated Net Annual Benefit From Cleaning</div>
-          <div class="roi-calc__value" id="calcNet">$11,600 / year</div>
-          <div class="roi-calc__breakdown">
-            <span>Lost revenue recovered: <strong id="calcRecovered">$14,480</strong></span>
-            <span>Annual cleaning cost: <strong id="calcCost">~$2,880</strong></span>
-          </div>
-        </div>
-
-        <p class="roi-calc__footnote">
-          Cleaning cost assumes ~$3 per panel per visit, 4 visits per year (quarterly). Efficiency loss model: ~1.2% per month of uncleaned soiling, capped at 25%. Real Hawaii loss rates vary with coastal salt, pollen, and bird activity — an on-site inspection gives the real number.
-        </p>
-      </div>
-
-      <div class="roi-modal__cta">
-        <a href="#contact" class="btn btn--primary" data-roi-close>Request My Site Estimate</a>
-        <a href="tel:+18085946973" class="btn btn--ghost">Call (808) 594&#8209;6973</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
@@ -2096,26 +2254,8 @@ ul { list-style: none; }
   }, { threshold: 0.5 });
   statNumbers.forEach(function(el) { statsObs.observe(el); });
 
-  // ===== ROI MODAL =====
-  var roiModal = document.getElementById('roiModal');
-  if (roiModal) {
-    var openers = document.querySelectorAll('[data-roi-open]');
-    var closers = roiModal.querySelectorAll('[data-roi-close]');
-    function openRoi() {
-      roiModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      setTimeout(function(){ roiModal.querySelector('.roi-modal__close').focus(); }, 100);
-    }
-    function closeRoi() {
-      roiModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    openers.forEach(function(btn){ btn.addEventListener('click', openRoi); });
-    closers.forEach(function(btn){ btn.addEventListener('click', closeRoi); });
-    roiModal.addEventListener('click', function(e){ if (e.target === roiModal) closeRoi(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && roiModal.classList.contains('open')) closeRoi(); });
-
-    // ===== ROI CALCULATOR =====
+  // ===== ROI CALCULATOR =====
+  (function() {
     var calc = {
       panels: document.getElementById('calcPanels'),
       panelsRange: document.getElementById('calcPanelsRange'),
@@ -2222,7 +2362,7 @@ ul { list-style: none; }
       [calc.panelsRange, calc.monthsRange, calc.rateRange].forEach(updateRangeFill);
       recalc();
     }
-  }
+  })();
 
   // ===== TESTIMONIAL SLIDER =====
   var track = document.getElementById('testimonialTrack');
