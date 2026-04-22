@@ -1739,6 +1739,137 @@ ul { list-style: none; }
   }
 }
 
+/* ===== METHOD / HOW WE WORK ===== */
+.method {
+  background: #f6f5f4;
+  padding: 120px 48px 100px;
+}
+.method__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.method__intro {
+  max-width: 820px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+.method__eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #1c75bc;
+  margin-bottom: 16px;
+}
+.method__title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: #231f20;
+  margin-bottom: 20px;
+}
+.method__title span {
+  color: #1c75bc;
+  display: block;
+}
+.method__lede {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #444;
+}
+.method__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+.method__block {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  padding: 40px 36px;
+}
+.method__block-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #1c75bc;
+  margin-bottom: 10px;
+}
+.method__block-title {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: #231f20;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+.method__block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 18px;
+}
+.method__section-head {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1c75bc;
+  margin: 24px 0 12px;
+}
+.method__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+.method__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 8px;
+}
+.method__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 2px;
+  background: #1c75bc;
+}
+.method__close {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #e0dfdb;
+}
+.method__close p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .method__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .method {
+    padding: 80px 24px;
+  }
+  .method__block {
+    padding: 32px 24px;
+  }
+}
+
 /* ===== FAQ ===== */
 .faq {
   background: #f6f5f4;
@@ -2186,6 +2317,56 @@ ul { list-style: none; }
         <div class="service-block__photo" role="img" aria-label="Recurring maintenance programs" style="background-image: url('https://images.unsplash.com/photo-1642417188964-870c08705ef3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop');"></div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHOD / HOW WE WORK ===== -->
+<section class="method" id="method" aria-labelledby="method-title">
+  <div class="method__inner">
+    <div class="method__intro reveal reveal--up">
+      <div class="method__eyebrow">How We Work</div>
+      <h2 id="method-title" class="method__title">Commercial cleaning in Hawaii, <span>done right.</span></h2>
+      <p class="method__lede">Eclipse Hawaii is a commercial exterior cleaning company based in Honolulu, serving property managers, commercial real estate owners, retail operators, gas station groups, hotels, condominiums, and solar owners across every Hawaiian island. Two services sit at the center of what we do — commercial glass and commercial solar — and both run on the same core piece of equipment: a water-fed pole (WFP) pure-water rinse system that lifts build-up without chemicals.</p>
+    </div>
+
+    <div class="method__grid">
+
+      <article class="method__block reveal reveal--up" id="method-window">
+        <div class="method__block-eyebrow">Service Detail</div>
+        <h3 class="method__block-title">Commercial Glass &amp; Window Cleaning</h3>
+        <p>Eclipse Hawaii cleans commercial glass with a two-part system: a water-fed pole (WFP) rig using deionized, purified water for the glass and frame rinse, paired with traditional squeegee finishing wherever a hand pass adds value. Pure-water rinse leaves no residue — so the glass actually stays clean between visits, which matters a lot in Hawaii's salt-spray coastal air.</p>
+        <h4 class="method__section-head">Properties we clean</h4>
+        <ul class="method__list">
+          <li>Storefronts and ground-floor commercial glass</li>
+          <li>Office buildings and commercial real estate — curtain-wall exteriors</li>
+          <li>Hotels and hospitality properties, including higher-floor exteriors</li>
+          <li>Condominiums, HOAs, and mixed-use residential towers</li>
+          <li>Gas station, convenience store, and retail entry-door glazing</li>
+        </ul>
+        <h4 class="method__section-head">Where we work</h4>
+        <p>Oahu is home base — Honolulu, Waikiki, Kakaako, Ala Moana, Downtown, Kailua, Kaneohe, Pearl City, and the West Oahu commercial corridor. For commercial accounts and multi-property portfolios, Eclipse travels inter-island to Maui, Hawaii Island, Kauai, Molokai, and Lanai.</p>
+      </article>
+
+      <article class="method__block reveal reveal--up" id="method-solar">
+        <div class="method__block-eyebrow">Service Detail</div>
+        <h3 class="method__block-title">Commercial Solar Panel Cleaning</h3>
+        <p>Commercial solar arrays in Hawaii soil faster than almost anywhere in the U.S. Between volcanic ash, red dirt (particularly on Kauai and Maui), coastal salt, pollen, and heavy bird activity near palm-lined coastlines, panels routinely lose 15–25% of rated output inside 12 months of neglect. Eclipse Hawaii cleans commercial solar with the same WFP pure-water rinse — no detergents, no abrasive pads, no risk to panel coatings or manufacturer warranties.</p>
+        <h4 class="method__section-head">What we work on</h4>
+        <ul class="method__list">
+          <li>Rooftop commercial arrays on retail, hotel, office, and warehouse properties</li>
+          <li>Ground-mount arrays for business campuses and industrial facilities</li>
+          <li>Carport arrays over commercial parking</li>
+          <li>Multi-property portfolios across Oahu and neighbor islands</li>
+        </ul>
+        <h4 class="method__section-head">Why cadence matters</h4>
+        <p>Soiling builds at roughly 1.2% efficiency loss per month of missed cleaning and caps around 20–25%. For most Hawaii commercial arrays the right answer is quarterly service — four visits a year that keep output within about 3% of the clean baseline. Eclipse's recurring maintenance programs build that cadence in, with documented before/after photos of every cleaning.</p>
+      </article>
+
+    </div>
+
+    <div class="method__close reveal reveal--up">
+      <p>Every Eclipse Hawaii job is run by licensed, insured, uniformed crews — <strong>General Liability, Umbrella, and Commercial Auto</strong> coverage at required commercial limits. Whether you need a one-time clean before a property sale or a quarterly program across a dozen locations, the on-site inspection and quote are always free.</p>
     </div>
   </div>
 </section>
