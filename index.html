@@ -745,12 +745,197 @@ ul { list-style: none; }
   background: #1c75bc;
   color: #fff;
 }
+/* ===== ROI CALCULATOR ===== */
+.roi-calc {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 2px dashed #e3e9ef;
+}
+.roi-calc__title {
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #231f20;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+.roi-calc__sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.55;
+}
+.roi-calc__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.roi-field {
+  background: #f7fafd;
+  border: 1px solid #e3e9ef;
+  border-radius: 6px;
+  padding: 14px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.roi-field:focus-within {
+  border-color: #1c75bc;
+  box-shadow: 0 0 0 3px rgba(28,117,188,0.1);
+}
+.roi-field__label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+  display: block;
+  margin-bottom: 6px;
+}
+.roi-field__input-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.roi-field__prefix,
+.roi-field__suffix {
+  font-size: 18px;
+  font-weight: 900;
+  color: #888;
+}
+.roi-field__input {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #231f20;
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  letter-spacing: -0.5px;
+  -moz-appearance: textfield;
+}
+.roi-field__input::-webkit-outer-spin-button,
+.roi-field__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.roi-field__range {
+  width: 100%;
+  margin-top: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.roi-field__range::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(to right, #1c75bc var(--fill, 50%), #d6e2ed var(--fill, 50%));
+  border-radius: 2px;
+}
+.roi-field__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1c75bc;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(28,117,188,0.35);
+  margin-top: -6px;
+}
+.roi-field__range::-moz-range-track {
+  height: 4px;
+  background: #d6e2ed;
+  border-radius: 2px;
+}
+.roi-field__range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1c75bc;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(28,117,188,0.35);
+}
+
+.roi-calc__derived {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 16px 22px;
+  background: #fafbfd;
+  border: 1px dashed #e3e9ef;
+  border-radius: 6px;
+  margin-bottom: 22px;
+}
+.roi-derived__label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+.roi-derived__value {
+  font-size: 18px;
+  font-weight: 900;
+  color: #231f20;
+  letter-spacing: -0.3px;
+}
+
+.roi-calc__result {
+  padding: 26px 32px;
+  background: linear-gradient(135deg, #1d7a3a 0%, #125025 100%);
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 14px;
+  transition: background 0.4s ease;
+}
+.roi-calc__eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.88;
+  margin-bottom: 8px;
+}
+.roi-calc__value {
+  font-size: clamp(32px, 4.6vw, 42px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+}
+.roi-calc__breakdown {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  opacity: 0.9;
+}
+.roi-calc__breakdown strong {
+  font-weight: 800;
+}
+.roi-calc__footnote {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.55;
+  margin: 0 0 14px;
+}
+
 @media (max-width: 680px) {
   .service-block__roi { margin-left: 0; margin-top: 12px; }
   .roi-modal__header { padding: 32px 24px 24px; }
   .roi-modal__body { padding: 28px 24px 32px; }
   .roi-modal__system { grid-template-columns: repeat(2, 1fr); }
   .roi-modal__compare { grid-template-columns: 1fr; }
+  .roi-calc__grid { grid-template-columns: 1fr; }
+  .roi-calc__derived { grid-template-columns: repeat(3, 1fr); padding: 14px 12px; gap: 6px; }
+  .roi-derived__value { font-size: 15px; }
+  .roi-derived__label { font-size: 9px; letter-spacing: 1px; }
 }
 
 /* ===== INDUSTRIES ===== */
@@ -1781,6 +1966,67 @@ ul { list-style: none; }
         commercial systems. Ask Eclipse for a site-specific estimate.
       </p>
 
+      <!-- ===== INTERACTIVE CALCULATOR ===== -->
+      <div class="roi-calc" id="roiCalc">
+        <div class="roi-calc__title">Run the numbers on your system</div>
+        <p class="roi-calc__sub">Drag the sliders or type your numbers. Estimates update live using ~5.5 peak-sun hrs/day (Hawaii average) and ~400W per panel.</p>
+
+        <div class="roi-calc__grid">
+          <div class="roi-field">
+            <label class="roi-field__label" for="calcPanels">Number of Panels</label>
+            <div class="roi-field__input-wrap">
+              <input type="number" id="calcPanels" class="roi-field__input" min="1" max="2000" step="1" value="240" inputmode="numeric" aria-label="Number of panels">
+            </div>
+            <input type="range" class="roi-field__range" id="calcPanelsRange" min="10" max="800" step="5" value="240" aria-label="Number of panels slider">
+          </div>
+
+          <div class="roi-field">
+            <label class="roi-field__label" for="calcMonths">Months Since Last Clean</label>
+            <div class="roi-field__input-wrap">
+              <input type="number" id="calcMonths" class="roi-field__input" min="0" max="60" step="1" value="12" inputmode="numeric" aria-label="Months since last cleaning">
+            </div>
+            <input type="range" class="roi-field__range" id="calcMonthsRange" min="0" max="36" step="1" value="12" aria-label="Months slider">
+          </div>
+
+          <div class="roi-field">
+            <label class="roi-field__label" for="calcRate">HECO Rate ($&#47;kWh)</label>
+            <div class="roi-field__input-wrap">
+              <span class="roi-field__prefix">$</span>
+              <input type="number" id="calcRate" class="roi-field__input" min="0.20" max="0.70" step="0.01" value="0.42" inputmode="decimal" aria-label="HECO rate">
+            </div>
+            <input type="range" class="roi-field__range" id="calcRateRange" min="0.25" max="0.60" step="0.01" value="0.42" aria-label="HECO rate slider">
+          </div>
+        </div>
+
+        <div class="roi-calc__derived">
+          <div>
+            <div class="roi-derived__label">System Size</div>
+            <div class="roi-derived__value" id="calcSize">96 kW</div>
+          </div>
+          <div>
+            <div class="roi-derived__label">Monthly Output (Clean)</div>
+            <div class="roi-derived__value" id="calcOutput">15,840 kWh</div>
+          </div>
+          <div>
+            <div class="roi-derived__label">Est. Efficiency Loss</div>
+            <div class="roi-derived__value" id="calcLoss">18%</div>
+          </div>
+        </div>
+
+        <div class="roi-calc__result" id="calcResult">
+          <div class="roi-calc__eyebrow">Estimated Net Annual Benefit From Cleaning</div>
+          <div class="roi-calc__value" id="calcNet">$11,600 / year</div>
+          <div class="roi-calc__breakdown">
+            <span>Lost revenue recovered: <strong id="calcRecovered">$14,480</strong></span>
+            <span>Annual cleaning cost: <strong id="calcCost">~$2,880</strong></span>
+          </div>
+        </div>
+
+        <p class="roi-calc__footnote">
+          Cleaning cost assumes ~$3 per panel per visit, 4 visits per year (quarterly). Efficiency loss model: ~1.2% per month of uncleaned soiling, capped at 25%. Real Hawaii loss rates vary with coastal salt, pollen, and bird activity — an on-site inspection gives the real number.
+        </p>
+      </div>
+
       <div class="roi-modal__cta">
         <a href="#contact" class="btn btn--primary" data-roi-close>Request My Site Estimate</a>
         <a href="tel:+18085946973" class="btn btn--ghost">Call (808) 594&#8209;6973</a>
@@ -1868,6 +2114,114 @@ ul { list-style: none; }
     closers.forEach(function(btn){ btn.addEventListener('click', closeRoi); });
     roiModal.addEventListener('click', function(e){ if (e.target === roiModal) closeRoi(); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && roiModal.classList.contains('open')) closeRoi(); });
+
+    // ===== ROI CALCULATOR =====
+    var calc = {
+      panels: document.getElementById('calcPanels'),
+      panelsRange: document.getElementById('calcPanelsRange'),
+      months: document.getElementById('calcMonths'),
+      monthsRange: document.getElementById('calcMonthsRange'),
+      rate: document.getElementById('calcRate'),
+      rateRange: document.getElementById('calcRateRange'),
+      size: document.getElementById('calcSize'),
+      output: document.getElementById('calcOutput'),
+      loss: document.getElementById('calcLoss'),
+      net: document.getElementById('calcNet'),
+      recovered: document.getElementById('calcRecovered'),
+      cost: document.getElementById('calcCost'),
+      result: document.getElementById('calcResult')
+    };
+    if (calc.panels) {
+      var WATTS_PER_PANEL = 400;         // modern commercial panel avg
+      var PEAK_SUN_HRS = 5.5;            // Hawaii average
+      var DAYS_PER_MONTH = 30.4;
+      var LOSS_PER_MONTH = 0.012;        // 1.2% soiling loss per month of no-clean
+      var MAX_LOSS = 0.25;               // cap at 25%
+      var CLEANINGS_PER_YEAR = 4;        // quarterly
+      var COST_PER_PANEL = 3;            // rough per-panel per-visit
+
+      function fmtMoney(n) {
+        var rounded = Math.round(n);
+        var neg = rounded < 0;
+        var abs = Math.abs(rounded);
+        var str = abs >= 1000 ? abs.toLocaleString() : String(abs);
+        return (neg ? '-$' : '$') + str;
+      }
+      function fmtInt(n) { return Math.round(n).toLocaleString(); }
+
+      function clampVal(el) {
+        var v = parseFloat(el.value);
+        var min = parseFloat(el.min);
+        var max = parseFloat(el.max);
+        if (isNaN(v)) v = min;
+        if (v < min) v = min;
+        if (v > max) v = max;
+        return v;
+      }
+
+      function updateRangeFill(rangeEl) {
+        var min = parseFloat(rangeEl.min);
+        var max = parseFloat(rangeEl.max);
+        var val = parseFloat(rangeEl.value);
+        var pct = ((val - min) / (max - min)) * 100;
+        rangeEl.style.setProperty('--fill', pct + '%');
+      }
+
+      function recalc() {
+        var panels = clampVal(calc.panels);
+        var months = clampVal(calc.months);
+        var rate = clampVal(calc.rate);
+
+        var systemKW = (panels * WATTS_PER_PANEL) / 1000;
+        var monthlyOutputKWh = systemKW * PEAK_SUN_HRS * DAYS_PER_MONTH;
+        var lossFraction = Math.min(months * LOSS_PER_MONTH, MAX_LOSS);
+        var monthlyLossKWh = monthlyOutputKWh * lossFraction;
+        var annualLostRevenue = monthlyLossKWh * rate * 12;
+        var annualCleaningCost = panels * COST_PER_PANEL * CLEANINGS_PER_YEAR;
+        var net = annualLostRevenue - annualCleaningCost;
+
+        calc.size.textContent = (systemKW >= 100 ? Math.round(systemKW) : systemKW.toFixed(1)) + ' kW';
+        calc.output.textContent = fmtInt(monthlyOutputKWh) + ' kWh';
+        calc.loss.textContent = Math.round(lossFraction * 100) + '%';
+        calc.net.textContent = fmtMoney(net) + ' / year';
+        calc.recovered.textContent = fmtMoney(annualLostRevenue);
+        calc.cost.textContent = '~' + fmtMoney(annualCleaningCost);
+
+        var eyebrow = calc.result.querySelector('.roi-calc__eyebrow');
+        // Flip messaging/color when cleaning frequency exceeds soiling recovery
+        if (net < 0) {
+          calc.result.classList.add('roi-calc__result--loss');
+          calc.result.style.background = 'linear-gradient(135deg, #b36b1e 0%, #7a4212 100%)';
+          if (eyebrow) eyebrow.textContent = 'Panels Recently Cleaned — Hold Off Until Soiling Builds';
+        } else {
+          calc.result.classList.remove('roi-calc__result--loss');
+          calc.result.style.background = '';
+          if (eyebrow) eyebrow.textContent = 'Estimated Net Annual Benefit From Cleaning';
+        }
+      }
+
+      function wireField(numberEl, rangeEl) {
+        numberEl.addEventListener('input', function() {
+          rangeEl.value = clampVal(numberEl);
+          updateRangeFill(rangeEl);
+          recalc();
+        });
+        rangeEl.addEventListener('input', function() {
+          numberEl.value = rangeEl.value;
+          updateRangeFill(rangeEl);
+          recalc();
+        });
+        numberEl.addEventListener('blur', function() {
+          numberEl.value = clampVal(numberEl);
+          recalc();
+        });
+      }
+      wireField(calc.panels, calc.panelsRange);
+      wireField(calc.months, calc.monthsRange);
+      wireField(calc.rate, calc.rateRange);
+      [calc.panelsRange, calc.monthsRange, calc.rateRange].forEach(updateRangeFill);
+      recalc();
+    }
   }
 
   // ===== TESTIMONIAL SLIDER =====
