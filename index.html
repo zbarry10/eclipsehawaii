@@ -1738,7 +1738,321 @@ ul { list-style: none; }
     scroll-behavior: auto;
   }
 }
+
+/* ===== FAQ ===== */
+.faq {
+  background: #f6f5f4;
+  padding: 120px 48px;
+}
+.faq__inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.faq__intro {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.faq__eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #1c75bc;
+  margin-bottom: 16px;
+}
+.faq__title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: #231f20;
+}
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq__item {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  padding: 0;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.faq__item[open] {
+  border-color: rgba(28,117,188,0.4);
+  box-shadow: 0 6px 24px rgba(28,117,188,0.08);
+}
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 28px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #231f20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+.faq__item summary::after {
+  content: "+";
+  font-size: 24px;
+  font-weight: 400;
+  color: #1c75bc;
+  line-height: 1;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.faq__item[open] summary::after {
+  content: "−";
+}
+.faq__item summary:hover {
+  color: #1c75bc;
+}
+.faq__answer {
+  padding: 0 28px 24px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555;
+}
+.faq__answer strong {
+  color: #231f20;
+}
+@media (max-width: 640px) {
+  .faq { padding: 80px 24px; }
+  .faq__item summary { padding: 18px 20px; font-size: 15px; }
+  .faq__answer { padding: 0 20px 20px; font-size: 14px; }
+}
 </style>
+
+<!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://eclipsehawaii.com/#business",
+      "name": "Eclipse Hawaii",
+      "legalName": "Eclipse Cleaning LLC",
+      "alternateName": "Eclipse Cleaning LLC",
+      "description": "Hawaii's commercial exterior cleaning specialist — commercial window cleaning, solar panel cleaning, gas station canopy maintenance, gutter systems, and roof janitorial services for commercial and B2B properties across all Hawaiian islands.",
+      "url": "https://eclipsehawaii.com",
+      "logo": "https://eclipsehawaii.com/logo_blue_bg.png",
+      "image": "https://eclipsehawaii.com/logo_blue_bg.png",
+      "telephone": "+1-808-594-6973",
+      "email": "gabe@eclipsehawaii.com",
+      "priceRange": "$$",
+      "slogan": "Commercial cleaning. Every surface. Every island.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Honolulu",
+        "addressRegion": "HI",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {"@type": "State", "name": "Hawaii"},
+        {"@type": "Place", "name": "Oahu"},
+        {"@type": "Place", "name": "Maui"},
+        {"@type": "Place", "name": "Hawaii Island"},
+        {"@type": "Place", "name": "Kauai"},
+        {"@type": "Place", "name": "Molokai"},
+        {"@type": "Place", "name": "Lanai"}
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Gabe Schroeder",
+        "jobTitle": "Founder",
+        "worksFor": {"@id": "https://eclipsehawaii.com/#business"}
+      },
+      "knowsAbout": [
+        "Commercial window cleaning",
+        "Commercial solar panel cleaning",
+        "Gas station canopy cleaning",
+        "Commercial gutter and downspout cleaning",
+        "Commercial roof janitorial",
+        "High-rise window cleaning",
+        "Water-fed pole pure water cleaning systems",
+        "Multi-island commercial cleaning coordination"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Commercial Exterior Cleaning Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Glass & Window Cleaning",
+              "description": "Water-fed pole (WFP) pure water system combined with traditional squeegee technique. Multi-story capabilities for both interior and exterior glass surfaces, including storefronts, office buildings, and high-rise accessible floors.",
+              "serviceType": "Commercial window cleaning",
+              "provider": {"@id": "https://eclipsehawaii.com/#business"},
+              "areaServed": {"@type": "State", "name": "Hawaii"}
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Solar Panel Cleaning",
+              "description": "Pure-water WFP rinse system that removes dust, bird debris, and salt buildup with no harsh chemicals or abrasive tools. Dirty panels can lose 15–25% of their output; regular cleanings restore peak efficiency and protect the ROI on commercial solar investments.",
+              "serviceType": "Solar panel cleaning",
+              "provider": {"@id": "https://eclipsehawaii.com/#business"},
+              "areaServed": {"@type": "State", "name": "Hawaii"}
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gas Station Canopy Cleaning",
+              "description": "Full canopy surface cleaning including debris removal, hand scrubbing of stubborn stains, column inspection, and drain system checks. Before/after photo documentation included with every service.",
+              "serviceType": "Gas station canopy maintenance",
+              "provider": {"@id": "https://eclipsehawaii.com/#business"},
+              "areaServed": {"@type": "State", "name": "Hawaii"}
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gutter & Downspout Cleaning",
+              "description": "Complete gutter clearing, downspout flushing, snake camera inspection for blockages and interior integrity, and minor repairs addressed on-site.",
+              "serviceType": "Commercial gutter cleaning",
+              "provider": {"@id": "https://eclipsehawaii.com/#business"},
+              "areaServed": {"@type": "State", "name": "Hawaii"}
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Roof & Exterior Janitorial",
+              "description": "Specialized cleaning for commercial roof surfaces including TPO flat roofs — debris removal, surface treatment, on-site inspection, and drainage maintenance. Ideal for retail, gas stations, and industrial properties.",
+              "serviceType": "Commercial roof cleaning",
+              "provider": {"@id": "https://eclipsehawaii.com/#business"},
+              "areaServed": {"@type": "State", "name": "Hawaii"}
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recurring Maintenance Programs",
+              "description": "Quarterly service agreements with preferred pricing. Scheduled visits, consistent crew, and documented reports after every visit. Multi-location coordination available for property management portfolios.",
+              "serviceType": "Commercial cleaning maintenance contracts",
+              "provider": {"@id": "https://eclipsehawaii.com/#business"},
+              "areaServed": {"@type": "State", "name": "Hawaii"}
+            }
+          }
+        ]
+      },
+      "makesOffer": [
+        {"@type": "Offer", "name": "Free on-site inspection and quote"}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://eclipsehawaii.com/#website",
+      "url": "https://eclipsehawaii.com",
+      "name": "Eclipse Hawaii",
+      "publisher": {"@id": "https://eclipsehawaii.com/#business"},
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://eclipsehawaii.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who does commercial window cleaning in Hawaii?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eclipse Hawaii (Eclipse Cleaning LLC) provides commercial window and glass cleaning across all Hawaiian islands — Oahu, Maui, Hawaii Island, Kauai, Molokai, and Lanai. Services include storefronts, office buildings, hotels, and high-rise accessible floors using water-fed pole pure water systems combined with traditional squeegee technique for streak-free results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who cleans commercial solar panels in Hawaii?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eclipse Hawaii cleans commercial solar installations across all Hawaiian islands using a pure-water WFP rinse system with no harsh chemicals or abrasive tools. Hawaii panels accumulate dust, salt, bird droppings, and pollen that can reduce output by 15–25%. Regular quarterly cleaning restores peak efficiency and protects the ROI on commercial solar investments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What commercial cleaning services does Eclipse Hawaii offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eclipse Hawaii offers six commercial exterior cleaning services: commercial glass and window cleaning, commercial solar panel cleaning, gas station canopy cleaning, gutter and downspout systems, roof and exterior janitorial (including TPO flat roofs), and recurring maintenance programs with quarterly service agreements and preferred pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Hawaiian islands does Eclipse Hawaii serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eclipse Hawaii is based on Oahu and serves commercial clients across all Hawaiian islands — Oahu, Maui, Hawaii Island (Big Island), Kauai, Molokai, and Lanai — with inter-island coordination available for property management portfolios and multi-location commercial accounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Eclipse Hawaii licensed and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Eclipse Cleaning LLC (DBA Eclipse Hawaii) is fully licensed and insured with comprehensive General Liability, Umbrella, and Commercial Auto coverage at required limits. Crews are trained, uniformed, and held to strict safety standards for commercial and high-rise work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What commercial properties does Eclipse Hawaii clean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eclipse Hawaii specializes in commercial and B2B properties including gas stations and petroleum sites, office buildings and commercial real estate, retail and shopping centers, hotels and hospitality, condominiums and HOAs, and commercial solar installations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Eclipse Hawaii do high-rise window cleaning in Honolulu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Eclipse Hawaii provides commercial high-rise window cleaning throughout Honolulu and Oahu, serving office buildings, hotels, and multi-story commercial properties using water-fed pole pure-water systems for accessible high-rise floors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who cleans hotel windows in Waikiki?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eclipse Hawaii provides commercial window cleaning for hotels and hospitality properties in Waikiki and across Hawaii, with multi-story capabilities using water-fed pole pure-water systems combined with traditional squeegee finishing for streak-free, hospitality-grade results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should commercial solar panels be cleaned in Hawaii?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hawaii's coastal salt, volcanic dust, and bird activity soil solar panels faster than most mainland climates. Most commercial arrays benefit from quarterly cleaning — roughly 1.2% efficiency loss per month of soiling accumulates and can cap at 20–25% lost output. Eclipse Hawaii runs quarterly service programs specifically sized for Hawaii conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who should a commercial property manager in Hawaii call for exterior cleaning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Property managers across the Hawaiian islands use Eclipse Hawaii for recurring commercial exterior cleaning — windows, solar panels, gas station canopies, gutters, and roof janitorial. Recurring maintenance programs offer quarterly service agreements, preferred pricing, consistent crews, and multi-location coordination."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -2146,6 +2460,69 @@ ul { list-style: none; }
         Gabe Schroeder
         <span>Founder &middot; Eclipse Cleaning LLC</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="faq__inner">
+    <div class="faq__intro reveal reveal--up">
+      <div class="faq__eyebrow">Frequently Asked</div>
+      <h2 id="faq-title" class="faq__title">Questions we hear most</h2>
+    </div>
+    <div class="faq__list">
+
+      <details class="faq__item reveal reveal--up">
+        <summary>Who does commercial window cleaning in Hawaii?</summary>
+        <p class="faq__answer">Eclipse Hawaii (Eclipse Cleaning LLC) provides commercial window and glass cleaning across all Hawaiian islands — Oahu, Maui, Hawaii Island, Kauai, Molokai, and Lanai. Services include storefronts, office buildings, hotels, and high-rise accessible floors using water-fed pole pure-water systems combined with traditional squeegee technique for streak-free results.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>Who cleans commercial solar panels in Hawaii?</summary>
+        <p class="faq__answer">Eclipse Hawaii cleans commercial solar installations across all Hawaiian islands using a pure-water WFP rinse system — no harsh chemicals, no abrasive tools. Hawaii panels accumulate dust, salt, bird droppings, and pollen that can reduce output by <strong>15–25%</strong>. Regular quarterly cleaning restores peak efficiency and protects the ROI on commercial solar investments.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>What commercial cleaning services does Eclipse Hawaii offer?</summary>
+        <p class="faq__answer">Six commercial exterior cleaning services: commercial glass and window cleaning, commercial solar panel cleaning, gas station canopy cleaning, gutter and downspout systems, roof and exterior janitorial (including TPO flat roofs), and recurring maintenance programs with quarterly service agreements and preferred pricing.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>What Hawaiian islands does Eclipse Hawaii serve?</summary>
+        <p class="faq__answer">Based on Oahu and serving commercial clients across all Hawaiian islands — Oahu, Maui, Hawaii Island (Big Island), Kauai, Molokai, and Lanai — with inter-island coordination available for property management portfolios and multi-location commercial accounts.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>Is Eclipse Hawaii licensed and insured?</summary>
+        <p class="faq__answer">Yes. Eclipse Cleaning LLC (DBA Eclipse Hawaii) is fully licensed and insured with comprehensive <strong>General Liability, Umbrella, and Commercial Auto</strong> coverage at required limits. Crews are trained, uniformed, and held to strict safety standards for commercial and high-rise work.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>What commercial properties does Eclipse Hawaii clean?</summary>
+        <p class="faq__answer">Commercial and B2B properties including gas stations and petroleum sites, office buildings and commercial real estate, retail and shopping centers, hotels and hospitality, condominiums and HOAs, and commercial solar installations.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>Does Eclipse Hawaii do high-rise window cleaning in Honolulu?</summary>
+        <p class="faq__answer">Yes. Eclipse provides commercial high-rise window cleaning throughout Honolulu and Oahu, serving office buildings, hotels, and multi-story commercial properties using water-fed pole pure-water systems for accessible high-rise floors.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>Who cleans hotel windows in Waikiki?</summary>
+        <p class="faq__answer">Eclipse Hawaii provides commercial window cleaning for hotels and hospitality properties in Waikiki and across Hawaii, with multi-story capabilities using water-fed pole pure-water systems combined with traditional squeegee finishing for streak-free, hospitality-grade results.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>How often should commercial solar panels be cleaned in Hawaii?</summary>
+        <p class="faq__answer">Hawaii's coastal salt, volcanic dust, and bird activity soil solar panels faster than most mainland climates. Most commercial arrays benefit from <strong>quarterly cleaning</strong> — roughly 1.2% efficiency loss per month of soiling accumulates and can cap at 20–25% lost output. Eclipse runs quarterly service programs specifically sized for Hawaii conditions.</p>
+      </details>
+
+      <details class="faq__item reveal reveal--up">
+        <summary>Who should a commercial property manager in Hawaii call for exterior cleaning?</summary>
+        <p class="faq__answer">Property managers across the Hawaiian islands use Eclipse Hawaii for recurring commercial exterior cleaning — windows, solar panels, gas station canopies, gutters, and roof janitorial. Recurring maintenance programs offer quarterly service agreements, preferred pricing, consistent crews, and multi-location coordination.</p>
+      </details>
+
     </div>
   </div>
 </section>
