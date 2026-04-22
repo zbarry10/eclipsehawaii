@@ -485,6 +485,274 @@ ul { list-style: none; }
   border-color: rgba(28,117,188,0.45);
 }
 
+/* ===== SOLAR ROI LINK ===== */
+.service-block__roi {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  background: rgba(28,117,188,0.08);
+  color: #1c75bc;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 1px solid rgba(28,117,188,0.2);
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+.service-block__roi:hover {
+  background: rgba(28,117,188,0.14);
+  border-color: rgba(28,117,188,0.5);
+  transform: translateY(-1px);
+}
+
+/* ===== ROI MODAL ===== */
+.roi-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,30,55,0.75);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.roi-modal.open {
+  display: flex;
+  opacity: 1;
+}
+.roi-modal__panel {
+  background: #ffffff;
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.35s ease;
+}
+.roi-modal.open .roi-modal__panel {
+  transform: translateY(0);
+}
+.roi-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f0f0;
+  color: #231f20;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 2;
+}
+.roi-modal__close:hover {
+  background: #e0e0e0;
+  transform: rotate(90deg);
+}
+.roi-modal__header {
+  background: linear-gradient(135deg, #1c75bc 0%, #0f4d80 100%);
+  color: #fff;
+  padding: 40px 48px 32px;
+  border-radius: 10px 10px 0 0;
+}
+.roi-modal__tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.roi-modal__title {
+  font-size: clamp(24px, 3.4vw, 34px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.roi-modal__sub {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+.roi-modal__body {
+  padding: 36px 48px 40px;
+}
+.roi-modal__section-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1c75bc;
+  margin-bottom: 14px;
+}
+.roi-modal__system {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+  padding: 20px 24px;
+  background: #f7fafd;
+  border-radius: 6px;
+  border-left: 4px solid #1c75bc;
+}
+.roi-modal__sys-item {
+  text-align: center;
+}
+.roi-modal__sys-value {
+  font-size: 22px;
+  font-weight: 900;
+  color: #231f20;
+  letter-spacing: -0.5px;
+}
+.roi-modal__sys-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+  margin-top: 4px;
+}
+.roi-modal__compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.roi-col {
+  padding: 24px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+.roi-col--bad {
+  background: #fff7f7;
+  border-color: #f5d8d8;
+}
+.roi-col--good {
+  background: #f4fbf6;
+  border-color: #d3ecd7;
+}
+.roi-col__title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.roi-col--bad .roi-col__title { color: #b03232; }
+.roi-col--good .roi-col__title { color: #1d7a3a; }
+.roi-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #444;
+  border-bottom: 1px dashed rgba(0,0,0,0.08);
+}
+.roi-row:last-child { border-bottom: none; }
+.roi-row strong { color: #231f20; font-weight: 800; }
+.roi-summary {
+  padding: 28px 32px;
+  background: linear-gradient(135deg, #1c75bc 0%, #0f4d80 100%);
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.roi-summary__eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+.roi-summary__value {
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+}
+.roi-summary__note {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+.roi-disclaimer {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #888;
+  background: #fafafa;
+  padding: 14px 18px;
+  border-radius: 6px;
+  border-left: 3px solid #ddd;
+  margin-bottom: 20px;
+}
+.roi-modal__cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.roi-modal__cta .btn {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 16px 24px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.roi-modal__cta .btn--primary {
+  background: #1c75bc;
+  color: #fff;
+  border: 2px solid #1c75bc;
+}
+.roi-modal__cta .btn--primary:hover {
+  background: #2388d4;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(28,117,188,0.3);
+}
+.roi-modal__cta .btn--ghost {
+  background: transparent;
+  color: #1c75bc;
+  border: 2px solid #1c75bc;
+}
+.roi-modal__cta .btn--ghost:hover {
+  background: #1c75bc;
+  color: #fff;
+}
+@media (max-width: 680px) {
+  .service-block__roi { margin-left: 0; margin-top: 12px; }
+  .roi-modal__header { padding: 32px 24px 24px; }
+  .roi-modal__body { padding: 28px 24px 32px; }
+  .roi-modal__system { grid-template-columns: repeat(2, 1fr); }
+  .roi-modal__compare { grid-template-columns: 1fr; }
+}
+
 /* ===== INDUSTRIES ===== */
 .industries {
   background: #f7f7f7;
@@ -1227,6 +1495,10 @@ ul { list-style: none; }
         <h3 class="service-block__name">Solar Panel Cleaning</h3>
         <p class="service-block__desc">Pure water WFP rinse system to remove dust, bird debris, and salt buildup — no harsh chemicals, no abrasive tools. Dirty panels can lose 15-25% of their output; regular cleanings restore peak efficiency, keep your electric bill where it should be, and protect the ROI on your solar investment.</p>
         <a href="#contact" class="service-block__link">Request a Quote <span aria-hidden="true">→</span></a>
+        <button type="button" class="service-block__roi" data-roi-open aria-haspopup="dialog" aria-controls="roiModal">
+          See the ROI math
+          <span aria-hidden="true">→</span>
+        </button>
         <div class="service-block__photo" role="img" aria-label="Solar panel cleaning service" style="background-image: url('photo_solar.jpg');"></div>
       </article>
 
@@ -1434,6 +1706,88 @@ ul { list-style: none; }
 
 </main>
 
+<!-- ===== SOLAR ROI CASE STUDY MODAL ===== -->
+<!-- NOTE: The numbers below are an illustrative example using typical
+     Hawaii commercial rates (HECO ~$0.42/kWh) and a 100 kW system.
+     To replace with a real client case study, update the fields
+     marked with /* EDIT: ... */ comments. -->
+<div class="roi-modal" id="roiModal" role="dialog" aria-modal="true" aria-labelledby="roiTitle" aria-describedby="roiSub">
+  <div class="roi-modal__panel">
+    <button type="button" class="roi-modal__close" data-roi-close aria-label="Close">&times;</button>
+
+    <div class="roi-modal__header">
+      <!-- EDIT: change tag to "Client Case Study" when a real client replaces this -->
+      <span class="roi-modal__tag">Illustrative Example</span>
+      <!-- EDIT: replace title with real client property name -->
+      <h3 class="roi-modal__title" id="roiTitle">Waikiki Retail Property &mdash; Rooftop Array</h3>
+      <!-- EDIT: swap in real location, install year, property type -->
+      <p class="roi-modal__sub" id="roiSub">Example based on a typical 100&nbsp;kW commercial rooftop system on Oahu</p>
+    </div>
+
+    <div class="roi-modal__body">
+
+      <!-- SYSTEM SPECS -->
+      <div class="roi-modal__section-label">System at a Glance</div>
+      <div class="roi-modal__system">
+        <div class="roi-modal__sys-item">
+          <div class="roi-modal__sys-value">100 kW</div>
+          <div class="roi-modal__sys-label">System Size</div>
+        </div>
+        <div class="roi-modal__sys-item">
+          <div class="roi-modal__sys-value">240</div>
+          <div class="roi-modal__sys-label">Panels</div>
+        </div>
+        <div class="roi-modal__sys-item">
+          <div class="roi-modal__sys-value">$0.42</div>
+          <div class="roi-modal__sys-label">HECO &#47; kWh</div>
+        </div>
+        <div class="roi-modal__sys-item">
+          <div class="roi-modal__sys-value">~18 mo</div>
+          <div class="roi-modal__sys-label">Since Last Clean</div>
+        </div>
+      </div>
+
+      <!-- BEFORE vs AFTER -->
+      <div class="roi-modal__section-label">Before &amp; After Cleaning</div>
+      <div class="roi-modal__compare">
+        <div class="roi-col roi-col--bad">
+          <div class="roi-col__title">Dirty &mdash; Current</div>
+          <div class="roi-row"><span>Monthly output</span><strong>9,600 kWh</strong></div>
+          <div class="roi-row"><span>Efficiency loss</span><strong>~20%</strong></div>
+          <div class="roi-row"><span>Offset at $0.42/kWh</span><strong>$4,032/mo</strong></div>
+          <div class="roi-row"><span>Lost revenue</span><strong>$1,008/mo</strong></div>
+        </div>
+        <div class="roi-col roi-col--good">
+          <div class="roi-col__title">Cleaned &mdash; Restored</div>
+          <div class="roi-row"><span>Monthly output</span><strong>12,000 kWh</strong></div>
+          <div class="roi-row"><span>Efficiency loss</span><strong>0&ndash;3%</strong></div>
+          <div class="roi-row"><span>Offset at $0.42/kWh</span><strong>$5,040/mo</strong></div>
+          <div class="roi-row"><span>Recovered revenue</span><strong>+$1,008/mo</strong></div>
+        </div>
+      </div>
+
+      <!-- ANNUAL SUMMARY -->
+      <div class="roi-summary">
+        <div class="roi-summary__eyebrow">Net Annual Benefit</div>
+        <div class="roi-summary__value">~$9,000 / year</div>
+        <div class="roi-summary__note">$12,096 recovered &minus; ~$3,000 in quarterly cleanings</div>
+      </div>
+
+      <p class="roi-disclaimer">
+        <strong>Illustrative example.</strong> Actual savings depend on system size, tilt, location,
+        soiling rate, and utility rate plan. Hawaii rates (HECO/HELCO/KIUC) are among the highest
+        in the US, which typically makes routine cleaning pay for itself within weeks for
+        commercial systems. Ask Eclipse for a site-specific estimate.
+      </p>
+
+      <div class="roi-modal__cta">
+        <a href="#contact" class="btn btn--primary" data-roi-close>Request My Site Estimate</a>
+        <a href="tel:+18085946973" class="btn btn--ghost">Call (808) 594&#8209;6973</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <img src="logo_white_nav.png" alt="Eclipse Hawaii" class="footer__logo" width="220" height="60">
@@ -1494,6 +1848,26 @@ ul { list-style: none; }
     });
   }, { threshold: 0.5 });
   statNumbers.forEach(function(el) { statsObs.observe(el); });
+
+  // ===== ROI MODAL =====
+  var roiModal = document.getElementById('roiModal');
+  if (roiModal) {
+    var openers = document.querySelectorAll('[data-roi-open]');
+    var closers = roiModal.querySelectorAll('[data-roi-close]');
+    function openRoi() {
+      roiModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function(){ roiModal.querySelector('.roi-modal__close').focus(); }, 100);
+    }
+    function closeRoi() {
+      roiModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    openers.forEach(function(btn){ btn.addEventListener('click', openRoi); });
+    closers.forEach(function(btn){ btn.addEventListener('click', closeRoi); });
+    roiModal.addEventListener('click', function(e){ if (e.target === roiModal) closeRoi(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && roiModal.classList.contains('open')) closeRoi(); });
+  }
 
   // ===== TESTIMONIAL SLIDER =====
   var track = document.getElementById('testimonialTrack');
