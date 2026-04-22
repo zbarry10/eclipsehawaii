@@ -603,20 +603,57 @@ ul { list-style: none; }
   letter-spacing: -2px;
   margin-bottom: 48px;
 }
-.islands__grid {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
+.islands__home {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+}
+.island-card--home {
+  text-align: center;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 6px;
+  padding: 56px 40px;
+  transition: background 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.island-card--home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1), transparent 55%);
+  pointer-events: none;
+}
+.island-card--home:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-4px);
+}
+.island-card--home .island-card__name {
+  font-size: clamp(44px, 6vw, 64px);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+.island-card--home .island-card__tag {
+  padding: 8px 22px;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+}
+.island-card--home .island-card__note {
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.islands__others {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 .island-card {
   text-align: center;
-  flex: 1;
-  min-width: 200px;
   background: rgba(255,255,255,0.08);
-  padding: 32px 24px;
+  padding: 28px 20px;
   border-radius: 4px;
   border: 1px solid rgba(255,255,255,0.1);
   transition: background 0.3s, transform 0.3s;
@@ -624,6 +661,18 @@ ul { list-style: none; }
 .island-card:hover {
   background: rgba(255,255,255,0.12);
   transform: translateY(-4px);
+}
+.island-card--other .island-card__name {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.island-card--other .island-card__tag {
+  font-size: 10px;
+  padding: 5px 14px;
+}
+.island-card--other .island-card__note {
+  font-size: 12px;
+  margin-top: 8px;
 }
 .island-card__name {
   font-size: 28px;
@@ -1015,14 +1064,12 @@ ul { list-style: none; }
   .islands__title {
     font-size: 36px;
   }
-  .islands__grid {
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
+  .island-card--home {
+    padding: 40px 24px;
   }
-  .island-card {
-    width: 100%;
-    max-width: 300px;
+  .islands__others {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .contact {
@@ -1284,28 +1331,30 @@ ul { list-style: none; }
 <!-- ===== ISLANDS ===== -->
 <section class="islands" id="islands" aria-labelledby="islands-title">
   <h2 id="islands-title" class="islands__title reveal reveal--up">Service Areas</h2>
-  <div class="islands__grid">
-    <div class="island-card reveal reveal--left">
+  <div class="islands__home reveal reveal--up">
+    <div class="island-card--home">
       <div class="island-card__name">Oahu</div>
       <span class="island-card__tag island-card__tag--home">Home Base</span>
       <div class="island-card__note">3 weeks advance scheduling</div>
     </div>
-    <div class="island-card reveal reveal--up">
+  </div>
+  <div class="islands__others">
+    <div class="island-card island-card--other reveal reveal--up">
       <div class="island-card__name">Maui</div>
       <span class="island-card__tag island-card__tag--other">Full Service</span>
       <div class="island-card__note">6 weeks advance notice</div>
     </div>
-    <div class="island-card reveal reveal--up">
+    <div class="island-card island-card--other reveal reveal--up">
       <div class="island-card__name">Big Island</div>
       <span class="island-card__tag island-card__tag--other">Kona &amp; Hilo</span>
       <div class="island-card__note">6 weeks advance notice</div>
     </div>
-    <div class="island-card reveal reveal--up">
+    <div class="island-card island-card--other reveal reveal--up">
       <div class="island-card__name">Molokai</div>
       <span class="island-card__tag island-card__tag--other">By Request</span>
       <div class="island-card__note">6 weeks advance notice</div>
     </div>
-    <div class="island-card reveal reveal--right">
+    <div class="island-card island-card--other reveal reveal--up">
       <div class="island-card__name">Kauai</div>
       <span class="island-card__tag island-card__tag--other">Full Service</span>
       <div class="island-card__note">6 weeks advance notice</div>
